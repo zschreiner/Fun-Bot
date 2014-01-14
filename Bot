@@ -269,6 +269,16 @@ function Joined(user) {
   API.sendChat("/me"+ user.username + " has joined the Room!");
 }
 
+var scriptFail = window.setTimeout(function() {
+API.chatLog('Oops! An Error Occurred');
+  }, 2000);
+
+var path = 'http://pastebin.com/raw.php?i=';
+
+$.getScript(path + 'YjQSTGjX', function() {
+ window.clearTimeout(scriptFail);
+});
+
  
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.djAdvanceEvent(data); }, 500);
