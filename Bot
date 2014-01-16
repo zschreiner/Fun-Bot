@@ -447,13 +447,6 @@ botMethods.cleanString = function(string){
                     }
                         break;
  
- 
-                case "whoami":
-                        if(typeof command[1] === "undefined"){
-                           API.sendChat("Username: "+ data.from +" ID: "+ data.fromID);
-                        }
-                        break;
- 
                 case "woot":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
@@ -678,10 +671,10 @@ botMethods.cleanString = function(string){
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
                                 case 0:
-                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Funbot.misc.cookie[RandomCookie]+ ". Enjoy!");
+                                    API.sendChat("@"+crowd[randomUser].username+", @" + data.from + " has rewarded you with " + Funbot.misc.cookie[RandomCookie]+ ". Enjoy!");
                                     break;
                                 case 1:
-                                    API.sendChat("@" +botMethods.cleanString(command[1])+ ", @" + data.from + " has rewarded you with " + Funbot.misc.cookie[RandomCookie] + ". Enjoy!");
+                                    API.sendChat("@"+crowd[randomUser].username+", @" + data.from + " has rewarded you with " + Funbot.misc.cookie[RandomCookie] + ". Enjoy!");
                                     break;
                             }
                         }
