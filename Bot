@@ -257,69 +257,43 @@ Funbot.misc.fortune = [
 " You will be invited to an exciting event."];
  
  
-Funbot.pubVars.skipOnExceed;
-Funbot.pubVars.command = false;
+mubBot.pubVars.skipOnExceed;
+mubBot.pubVars.command = false;
  
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
  
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
  
-API.on(API.USER_JOIN, Joined);
-function Joined(user) {
-  API.sendChat("/me"+ user.username + " has joined the Room!");
+API.on(API.USER_JOIN, UserJoin);
+function UserJoin(user)
+{
+var JoinMsg = ["@user has jonied!"];
+r = Math.floor(Math.random() * JoinMsg.length);
+API.sendChat(JoinMsg[r].replace("user", user.username));
 }
-
-var scriptFail = window.setTimeout(function() {
-API.chatLog('Oops! An Error Occurred');
-  }, 2000);
-
-var path = 'http://pastebin.com/raw.php?i=';
-
-$.getScript(path + 'YjQSTGjX', function() {
- window.clearTimeout(scriptFail);
-});
-
  
+
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.djAdvanceEvent(data); }, 500);
 }
- 
+
+
 botMethods.skip = function(){
     setTimeout(function(){
         if(!cancel) API.moderateForceSkip();
     }, 3500);
 };
  
-if (localStorage.usData === undefined) {
-    localStorage.usData = JSON.stringify({
-        counter: 0,
-    })
-}
- 
-function fanEveryone(data) {
-    var relationship = require('app/models/TheUserModel');
-    if (relationship.getRelationship(data.id) < 2) {
-        var fan = require('app/services/user/UserFanService');
-        fan = new fan(true, data.id);
-          var totalCount = JSON.parse(localStorage.usData);
-        ++totalCount.counter;
-        console.log('Fanned new user: ' + data.username + '. Total number fanned: ' + totalCount.counter);
-        localStorage.usData = JSON.stringify(totalCount);
-    }
-}
-API.on(API.USER_JOIN, fanEveryone);
-
- 
 botMethods.load = function(){
-    toSave = JSON.parse(localStorage.getItem("FunbotSave"));
-    Funbot.settings = toSave.settings;
+    toSave = JSON.parse(localStorage.getItem("mubBotSave"));
+    mubBot.settings = toSave.settings;
     ruleSkip = toSave.ruleSkip;
 };
  
-botMethods.save = function(){localStorage.setItem("FunbotSave", JSON.stringify(toSave))};
+botMethods.save = function(){localStorage.setItem("mubBotSave", JSON.stringify(toSave))};
  
 botMethods.loadStorage = function(){
-    if(localStorage.getItem("FunbotSave") !== null){
+    if(localStorage.getItem("mubBotSave") !== null){
         botMethods.load();
     }else{
         botMethods.save();
