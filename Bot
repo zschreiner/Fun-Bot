@@ -667,8 +667,8 @@ botMethods.cleanString = function(string){
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
                         break;
- 
-                
+                        
+                        
                     case "hug":
                         if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
