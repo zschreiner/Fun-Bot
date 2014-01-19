@@ -23,6 +23,7 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 - Announces who Grab song
 - Greets the Joiners
 - Gives out current song's link
+- Announce last song's stats
 
 
 
