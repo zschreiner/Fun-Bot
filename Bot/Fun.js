@@ -891,7 +891,7 @@ botMethods.cleanString = function(string){
         $.getJSON('http://gdata.youtube.com/feeds/api/videos/'+data.media.cid+'?v=2&alt=jsonc&callback=?', function(json){response = json.data});
         setTimeout(function(){
             if(typeof response === 'undefined' && data.media.format != 2 && Funbot.settings.removedFilter){
-                API.sendChat('/me This video may be unavailable!!');
+                //API.sendChat('/me This video may be unavailable!!');
             }
         }, 1500);
  
