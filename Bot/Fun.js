@@ -1,5 +1,5 @@
 /*
- Copyright (c) 2012-2013 by Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL
+ Copyright (c) 2013-2017 by Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL
  
  Permission to use this software for any purpose without fee is hereby granted, provided
  that the above copyright notice and this permission notice appear in all copies.
@@ -27,8 +27,8 @@
  OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  
  
- * NOTE:  PLEASE CONTACT DJ-NEON FOR THIS SCRIPT (DO NOT CHANGE ANYTHING ON THIS SCRIPT OR USE THIS SCRIPT WHICH
- * WAS WRITTEN BY IT'S RIGHTFUL OWNER: DJ NOEN)
+ * [NOTE]: THERE IS NOTHING HERE FOR YOU! COPYING THIS SCRIPT AND USING "IT" or "AS" (yours) WELL SERIOUSLY GET
+ * YOU TO FACE THE CONSEQUENCES!
  *
  * @Author:    Tawi Jordan - ๖ۣۜĐJ - ɴᴇᴏɴ - TFL (Member. on Plug.dj)
  *
@@ -79,7 +79,7 @@ Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
  
-Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2","52d545d996fba504168e6e87","52d5d67c3b79035088b00897"];
+Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2"];
  
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
  
@@ -432,7 +432,7 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "woot":
-                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(Funbot.admins.indexOf(fromID) > -1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat("One woot coming up!");
                         setTimeout(function(){
@@ -445,7 +445,7 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "meh":
-                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(Funbot.admins.indexOf(fromID) > -1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat("Bummer, A meh has been requested!!");
                         setTimeout(function(){
@@ -458,7 +458,7 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "join":
-                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(Funbot.admins.indexOf(fromID) > -1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             API.djJoin();
                         }
@@ -466,7 +466,7 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "leave":
-                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(Funbot.admins.indexOf(fromID) > -1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             API.djLeave();
                         }
@@ -474,8 +474,8 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "votes":
-                        API.sendChat("Users vote:  :+1: " + API.getRoomScore().positive + " | :-1: " + API.getRoomScore().negative + " | :purple_heart: " + API.getRoomScore().curates);
                         if(API.getUser(fromID).permission < 2 || Funbot.admins.indexOf(fromID) > -1){
+                        API.sendChat("Users vote:  :+1: " + API.getRoomScore().positive + " | :-1: " + API.getRoomScore().negative + " | :purple_heart: " + API.getRoomScore().curates);
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
