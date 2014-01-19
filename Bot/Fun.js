@@ -109,6 +109,16 @@ Funbot.misc.ball = [" It is certain",
 " Very doubtful"];
  
 Funbot.misc.ht = ["My magic coins says: Tails", "My magic coin says: Heads"];
+
+Funbot.misc.roll = [
+"You rolled A 1. Bummer :(",
+"You rolled A 2. Bummer :(",
+"You rolled A 3. Bummer :("];
+
+Funbot.misc.roll2 = [
+"4. Awesome!",
+"5. Awesome!",
+"6. Awesome!"];
  
 Funbot.misc.catfact = [
 "Cats have five toes on each front paw, but only four toes on each back paw.",
@@ -274,18 +284,9 @@ API.sendChat(JoinMsg[r].replace("user", user.username));
  
 
 function djAdvanceEvent(data){
-    setTimeout(function(){ botMethods.djAdvanceEvent(data); }, 500);
+    setTimeout(function(){ botMethods.data }, 500);
 }
 
-var scriptFail = window.setTimeout(function() {
-    API.chatLog('Oops! An Error Occurred');
-  }, 2000);
-
-var path = 'http://pastebin.com/raw.php?i=';
-
-$.getScript(path + 'YjQSTGjX', function() {
- window.clearTimeout(scriptFail);
-});
 
 botMethods.skip = function(){
     setTimeout(function(){
@@ -566,6 +567,45 @@ botMethods.cleanString = function(string){
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                 case "roll":
+                        if(typeof command[1] == "undefined"){
+                            var crowd = API.getUsers();
+                            var randomUser = Math.floor(Math.random() * crowd.length);
+                            var randomRoll = Math.floor(Math.random() * Funbot.misc.roll.length);
+                            var randomSentence = Math.floor(Math.random() * 2);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@"+ data.from +" You rolled a "+ Funbot.misc.roll2[randomRoll]);
+                                    setTimeout(function(){
+                                    document.getElementById("woot").click()
+                                    }, 650);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Funbot.misc.roll[randomRoll]);
+                                    break;
+                            }
+                        }else{
+                            if(command[1].indexOf("@") === 0) command[1] = command[1].substring(1);
+                            var randomRoll = Math.floor(Math.random() * Funbot.misc.roll.length);
+                            var randomSentence = Math.floor(Math.random() * 2);
+                            switch(randomSentence){
+                                case 0:
+                                    API.sendChat("@"+ data.from +" You rolled a "+ Funbot.misc.roll2[randomRoll]);
+                                    setTimeout(function(){
+                                    document.getElementById("woot").click()
+                                    }, 650);
+                                    break;
+                                case 1:
+                                    API.sendChat("@" + data.from + ", "+ Funbot.misc.roll[randomRoll]);
+                                    break;
+                           }
+                        }
+                        if(Funbot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
+                            Funbot.misc.ready = false;
+                            setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
+                        }
+                        break;
  
                  case "8ball":
                         if(typeof command[1] == "undefined"){
@@ -678,17 +718,17 @@ botMethods.cleanString = function(string){
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
                                     setTimeout(function(){
-                                        API.sendChat("/me grabs @"+crowd[randomUser].username+"'s ass");
+                                        API.sendChat("/me grabs @"+command[1]+"'s ass");
                                     }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("/me gives @"+crowd[randomUser].username+" a big bear hug");
+                                    API.sendChat("/me gives @"+command[1]+" a big bear hug");
                                     break;
                                 case 2:
-                                    API.sendChat("/me gives @"+crowd[randomUser].username+" a soft, furry hug");
+                                    API.sendChat("/me gives @"+command[1]+" a soft, furry hug");
                                     break;
                                 case 3:
-                                    API.sendChat("/me gives @"+crowd[randomUser].username+" an awkward hug");
+                                    API.sendChat("/me gives @"+command[1]+" an awkward hug");
                                     break;
                             }
                         }else{
@@ -700,17 +740,17 @@ botMethods.cleanString = function(string){
                                 case 0:
                                     API.sendChat("Hugs? Forget that!");
                                     setTimeout(function(){
-                                        API.sendChat("/me grabs @"+botMethods.cleanString(command[1])+"'s ass");
+                                        API.sendChat("/me grabs @"+command[1]+"'s ass");
                                     }, 650);
                                     break;
                                 case 1:
-                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a big bear hug");
+                                    API.sendChat("/me gives @"+command[1]+" a big bear hug");
                                     break;
                                 case 2:
-                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" a soft, furry hug");
+                                    API.sendChat("/me gives @"+command[1]+" a soft, furry hug");
                                     break;
                                 case 3:
-                                    API.sendChat("/me gives @"+botMethods.cleanString(command[1])+" an awkward hug");
+                                    API.sendChat("/me gives @"+command[1]+" an awkward hug");
                                     break;
                             }
                         }
@@ -863,7 +903,7 @@ botMethods.cleanString = function(string){
     console.log("FunBot-Script version " + Funbot.misc.version);
  
     setTimeout(function(){
-        $.getScript('http://goo.gl/k8RmHS');
+        $.getScript('http://goo.gl/9vurzR');
     }, 1000);
  
     setTimeout(function(){
