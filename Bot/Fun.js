@@ -35,7 +35,7 @@
  */
 
 
-//                                  ====== FUN BOT SCRIPT  ======
+//                                              ====== FUN BOT SCRIPT  ======
 
 
 var Funbot = {};
