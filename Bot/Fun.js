@@ -78,7 +78,6 @@ Funbot.settings.beggerFilter = true;
 Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
- 
 Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2"];
  
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
