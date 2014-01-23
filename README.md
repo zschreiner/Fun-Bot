@@ -1,7 +1,7 @@
 Fun Bot
 =======
 
-PlugWoot! A autowoot script which is used for plug.dj
+A script which is used for plug.dj
 
 I don't mind you guys using this script just long as nothing is to be changed on it.
 
