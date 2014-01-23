@@ -385,7 +385,7 @@ botMethods.cleanString = function(string){
  
                 case "commands":
                         if(typeof command[1] === "undefined"){
-                        API.sendChat("reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | source");
+                        API.sendChat("reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | source");
                         }
                         break;
                 
@@ -476,6 +476,14 @@ botMethods.cleanString = function(string){
                 case "votes":
                         if(API.getUser(fromID).permission < 2 || Funbot.admins.indexOf(fromID) > -1){
                         API.sendChat("Users vote:  :+1: " + API.getRoomScore().positive + " | :-1: " + API.getRoomScore().negative + " | :purple_heart: " + API.getRoomScore().curates);
+                            Funbot.misc.ready = false;
+                            setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                case "version":
+                        if(API.getUser(fromID).permission < 2 || Funbot.admins.indexOf(fromID) > -1){
+                        API.sendChat("Bot Version "+ Funbot.misc.version);
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
