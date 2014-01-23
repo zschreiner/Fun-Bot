@@ -61,19 +61,13 @@ Funbot.misc.tacos = new Array();
 joined = new Date().getTime();
  
 cancel = false;
- 
-Funbot.filters.swearWords = new Array();
-Funbot.filters.commandWords = new Array();
-Funbot.filters.racistWords = new Array();
+
 Funbot.filters.beggerWords = new Array();
  
 Funbot.settings.maxLength = 10; 
 Funbot.settings.cooldown = 10; 
 Funbot.settings.staffMeansAccess = true;
 Funbot.settings.historyFilter = true;
-Funbot.settings.swearFilter = true;
-Funbot.settings.commandFilter = true;
-Funbot.settings.racismFilter = true;
 Funbot.settings.beggerFilter = true;
 Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
@@ -405,7 +399,7 @@ botMethods.cleanString = function(string){
                         break;
                   
                 case "say":
-                    if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             }else{
                             API.sendChat(command[1]);
@@ -414,7 +408,7 @@ botMethods.cleanString = function(string){
                         break;
                         
                 case "add":
-                    if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             $(".icon-curate").click();
                             $($(".curate").children(".menu").children().children()[0]).mousedown();
@@ -431,7 +425,7 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "woot":
-                        if(Funbot.admins.indexOf(fromID) > -1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat("One woot coming up!");
                         setTimeout(function(){
@@ -444,7 +438,7 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "meh":
-                        if(Funbot.admins.indexOf(fromID) > -1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat("Bummer, A meh has been requested!!");
                         setTimeout(function(){
@@ -457,7 +451,7 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "join":
-                        if(Funbot.admins.indexOf(fromID) > -1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             API.djJoin();
                         }
@@ -465,7 +459,7 @@ botMethods.cleanString = function(string){
                         break;
  
                 case "leave":
-                        if(Funbot.admins.indexOf(fromID) > -1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             API.djLeave();
                         }
@@ -481,7 +475,7 @@ botMethods.cleanString = function(string){
                         break;
                         
                 case "version":
-                        if(API.getUser(fromID).permission < 2 || Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         API.sendChat("Bot Version "+ Funbot.misc.version);
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
@@ -539,6 +533,26 @@ botMethods.cleanString = function(string){
                         if(Funbot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission < 2){
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
+                        }
+                        break;
+                        
+                case "status":
+                        if(Funbot.admins.indexOf(fromID) > -1){
+                            var response = "";
+                            var currentTime = new Date().getTime();
+                            var minutes = Math.floor((currentTime - joined) / 60000);
+                            var hours = 0;
+                            while(minutes > 60){
+                                minutes = minutes - 60;
+                                hours++;
+                            }
+                            hours == 0 ? response = "Running for " + minutes + "m " : response = "Running for " + hours + "h " + minutes + "m";
+                            response = response + " | Begger filter: "+ Funbot.settings.beggerFilter;
+                            response = response + " | History filter: "+ Funbot.settings.historyFilter;
+                            response = response + " | MaxLength: " + Funbot.settings.maxLength + "m";
+                            response = response + " | Cooldown: " + Funbot.settings.cooldown + "s";
+                            response = response + " | Removed Video Filter: "+ Funbot.settings.removedFilter;
+                            API.sendChat(response);
                         }
                         break;
  
@@ -880,17 +894,9 @@ botMethods.cleanString = function(string){
                     mubBot.misc.ready = false;
                     setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
                 }
-        }        
-        if(Funbot.admins.indexOf(fromID) > -1 || API.getUser(fromID).permission > 1){
-            if(msg.indexOf("son of a bitch bot") !== -1 || msg.indexOf("bot son of a bitch") !== -1 || msg.indexOf("soab bot") !== -1 || msg.indexOf("bot soab") !== -1 || msg.indexOf("son of a biatch bot") !== -1 || msg.indexOf("bot son of a biatch") !== -1){
-                var FuckMsg = ["Nah.. Actually im the son of Bender.","What you just said you no-good, rat-bastard human, die in a fire. :)","< Test fuck >.. Sorry 0% fucks were given by me.","http://stream1.gifsoup.com/webroot/animatedgifs/980837_o.gif"];
-                API.sendChat("@" + data.from + " " + FuckMsg[Math.floor(Math.random() * FuckMsg.length)]);
-                    mubBot.misc.ready = false;
-                    setTimeout(function(){ mubBot.misc.ready = true; }, mubBot.settings.cooldown * 1000);
-                }
         }
-        
-    });
+    
+   });
     
     
     API.on(API.DJ_ADVANCE, DJ_ADVANCE);
