@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Funbot.settings;
 toSave.moderators = Funbot.moderators;
  
-Funbot.misc.version = "1.0.19";
+Funbot.misc.version = "1.0.18";
 Funbot.misc.origin = "This bot was created by DJ - ɴᴇᴏɴ - TFL, and it is copyrighted!";
 Funbot.misc.ready = true;
 Funbot.misc.lockSkipping = false;
@@ -377,12 +377,8 @@ botMethods.cleanString = function(string){
                 switch(command[0].toLowerCase()){
  
                 case "commands":
-                case "command":
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                           API.sendChat(".{commands} Mention is included!");
-                        setTimeout(function(){
-                           API.sendChat("reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
-                        }, 650);
+                        API.sendChat("reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | mystats | source | status");
                         }
                         break;
                 
@@ -405,67 +401,74 @@ botMethods.cleanString = function(string){
                 case "say":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
-                           API.sendChat(command[1]);
-                          }
+                            }else{
+                            API.sendChat(command[1]);
                         }
+                    }
                         break;
                         
                 case "add":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
                             $(".icon-curate").click();
                             $($(".curate").children(".menu").children().children()[0]).mousedown();
-                        }else{
-                            API.sendChat("This command requires Bouncer only!");
                         }
+                    }
                         break;
  
                 case "props":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
                            API.sendChat("@"+ data.from +" just gave props to @"+ API.getDJ().username +" for playing a dope track!");
                         }
+                    }
                         break;
  
                 case "woot":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
                            API.sendChat("One woot coming up!");
                         setTimeout(function(){
                            document.getElementById("woot").click()
                         }, 650);
-                        }else{
-                            API.sendChat("This command requires Bouncer only!");
+                        }else {
+                           API.sendChat("This command requires bouncer +");
                         }
+                    }
                         break;
  
                 case "meh":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
                            API.sendChat("Bummer, A meh has been requested!!");
                         setTimeout(function(){
                            document.getElementById("meh").click()
                         }, 650);
-                        }else{
-                            API.sendChat("This command requires Bouncer only!");
+                        }else {
+                           API.sendChat("This command requires bouncer +");
                         }
+                    }
                         break;
  
                 case "join":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
                             API.djJoin();
-                        }else{
-                            API.sendChat("This command requires Bouncer only!");
                         }
+                    }
                         break;
  
                 case "leave":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(typeof command[1] === "undefined"){
                             API.djLeave();
-                        }else{
-                            API.sendChat("This command requires Bouncer only!");
                         }
+                    }
                         break;
  
                 case "votes":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                          API.sendChat("Users vote:  :+1: " + API.getRoomScore().positive + " | :-1: " + API.getRoomScore().negative + " | :purple_heart: " + API.getRoomScore().curates);
+                        API.sendChat("Users vote:  :+1: " + API.getRoomScore().positive + " | :-1: " + API.getRoomScore().negative + " | :purple_heart: " + API.getRoomScore().curates);
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
@@ -473,7 +476,7 @@ botMethods.cleanString = function(string){
                         
                 case "version":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                          API.sendChat("Bot Version "+ Funbot.misc.version);
+                        API.sendChat("Bot Version "+ Funbot.misc.version);
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
@@ -550,8 +553,6 @@ botMethods.cleanString = function(string){
                             response = response + " | Cooldown: " + Funbot.settings.cooldown + "s";
                             response = response + " | Removed Video Filter: "+ Funbot.settings.removedFilter;
                             API.sendChat(response);
-                        }else{
-                            API.sendChat("This command requires Bouncer only!");
                         }
                         break;
  
