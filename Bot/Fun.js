@@ -399,7 +399,8 @@ botMethods.cleanString = function(string){
                        if(typeof command[1] === "undefined"){ 
                             API.moderateForceSkip();
                        }else{
-                            API.sendChat(command[1]);
+                            API.sendChat("@"+API.getDJ().username+"skipping becuase"+command[1]);
+                            API.moderateForceSkip();
                        }else{
                             API.sendChat("This command requires Bouncer only!");
                         }
