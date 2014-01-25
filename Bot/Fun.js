@@ -405,53 +405,46 @@ botMethods.cleanString = function(string){
                 case "say":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
-                            }else{
-                            API.sendChat(command[1]);
+                           API.sendChat(command[1]);
+                          }
                         }
-                    }
                         break;
                         
                 case "add":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
                             $(".icon-curate").click();
                             $($(".curate").children(".menu").children().children()[0]).mousedown();
+                        }else{
+                            API.sendChat("This command requires Bouncer only!");
                         }
-                    }
                         break;
  
                 case "props":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
                            API.sendChat("@"+ data.from +" just gave props to @"+ API.getDJ().username +" for playing a dope track!");
                         }
-                    }
                         break;
  
                 case "woot":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
                            API.sendChat("One woot coming up!");
                         setTimeout(function(){
                            document.getElementById("woot").click()
                         }, 650);
-                        }else {
-                           API.sendChat("This command requires bouncer +");
+                        }else{
+                            API.sendChat("This command requires Bouncer only!");
                         }
-                    }
                         break;
  
                 case "meh":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
                            API.sendChat("Bummer, A meh has been requested!!");
                         setTimeout(function(){
                            document.getElementById("meh").click()
                         }, 650);
-                        }else {
-                           API.sendChat("This command requires bouncer +");
+                        }else{
+                            API.sendChat("This command requires Bouncer only!");
                         }
-                    }
                         break;
  
                 case "join":
