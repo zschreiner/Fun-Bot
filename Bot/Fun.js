@@ -51,7 +51,7 @@ toSave = {};
 toSave.settings = Funbot.settings;
 toSave.moderators = Funbot.moderators;
  
-Funbot.misc.version = "1.0.18";
+Funbot.misc.version = "1.0.21";
 Funbot.misc.origin = "This bot was created by DJ - ɴᴇᴏɴ - TFL, and it is copyrighted!";
 Funbot.misc.ready = true;
 Funbot.misc.lockSkipping = false;
@@ -435,10 +435,10 @@ botMethods.cleanString = function(string){
                         setTimeout(function(){
                            document.getElementById("woot").click()
                         }, 650);
-                        }else {
+                        }
+                        }else{
                            API.sendChat("This command requires bouncer +");
                         }
-                    }
                         break;
  
                 case "meh":
@@ -448,10 +448,10 @@ botMethods.cleanString = function(string){
                         setTimeout(function(){
                            document.getElementById("meh").click()
                         }, 650);
-                        }else {
+                        }
+                        }else{
                            API.sendChat("This command requires bouncer +");
                         }
-                    }
                         break;
  
                 case "join":
@@ -459,7 +459,9 @@ botMethods.cleanString = function(string){
                         if(typeof command[1] === "undefined"){
                             API.djJoin();
                         }
-                    }
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                        }
                         break;
  
                 case "leave":
@@ -467,7 +469,9 @@ botMethods.cleanString = function(string){
                         if(typeof command[1] === "undefined"){
                             API.djLeave();
                         }
-                    }
+                    }else {
+                           API.sendChat("This command requires bouncer +");
+                        }
                         break;
  
                 case "votes":
@@ -483,6 +487,8 @@ botMethods.cleanString = function(string){
                         API.sendChat("Bot Version "+ Funbot.misc.version);
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
+                        }else {
+                           API.sendChat("This command requires bouncer +");
                         }
                         break;
                         
@@ -557,6 +563,8 @@ botMethods.cleanString = function(string){
                             response = response + " | Cooldown: " + Funbot.settings.cooldown + "s";
                             response = response + " | Removed Video Filter: "+ Funbot.settings.removedFilter;
                             API.sendChat(response);
+                        }else {
+                           API.sendChat("This command requires bouncer +");
                         }
                         break;
  
