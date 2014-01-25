@@ -406,10 +406,8 @@ botMethods.cleanString = function(string){
                         break;
                   
                 case "say":
-                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat(command[1]);
-                          }
                         }
                         break;
                         
