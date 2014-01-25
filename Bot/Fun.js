@@ -396,11 +396,12 @@ botMethods.cleanString = function(string){
                         
                 case "skip":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                       if(typeof command[1] === "undefined"){ 
                             API.moderateForceSkip();
+                       }else if(typeof command[1] === "undefined"){ 
+                            API.snedChat("@"+API.getDJ().username+" Skipping because "+command[1])
                        }else{
-                            API.sendChat("This command requires Bouncer only!");
-                            }
+                            API.sendChat("This command requires Admins only!");
+                        }
                        }
                         break;
                   
