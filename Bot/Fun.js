@@ -397,17 +397,16 @@ botMethods.cleanString = function(string){
                 case "skip":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.moderateForceSkip();
-                       }if(typeof command[1] === "undefined"){ 
-                            API.snedChat("@"+API.getDJ().username+" Skipping because "+command[1])
-                       }else{
-                            API.sendChat("This command requires Admins only!");
+                            }else{
+                            API.sendChat("This command requires Bouncer only!");
                         }
-                       }
                         break;
                   
                 case "say":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat(command[1]);
+                          }
                         }
                         break;
                         
@@ -925,4 +924,4 @@ botMethods.cleanString = function(string){
         });
     }, 3000);
  
-    API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!')  
+    API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
