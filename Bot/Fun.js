@@ -377,8 +377,12 @@ botMethods.cleanString = function(string){
                 switch(command[0].toLowerCase()){
  
                 case "commands":
+                case "command":
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        API.sendChat("reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | mystats | source | status");
+                           API.sendChat(".{commands} Mention is included!");
+                        setTimeout(function(){
+                           API.sendChat("reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
+                        }, 650);
                         }
                         break;
                 
@@ -925,4 +929,4 @@ botMethods.cleanString = function(string){
         });
     }, 3000);
  
-    API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
+    API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!')
