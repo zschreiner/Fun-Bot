@@ -300,6 +300,7 @@ function UserJoin(user)
 var JoinMsg = ["@user has jonied!","welcome @user!","Hey there @user!","Glad you came by @user"];
 r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username));
+$('#woot').click();
 }
 
 function djAdvanceEvent(data){
