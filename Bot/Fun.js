@@ -57,6 +57,9 @@ Funbot.misc.ready = true;
 Funbot.misc.lockSkipping = false;
 Funbot.misc.lockSkipped = "0";
 Funbot.misc.tacos = new Array();
+var songBoundary = 60 * 7;
+var announcementTick = 60 * 7;
+var lastAnnouncement = 0;
 
 joined = new Date().getTime();
  
@@ -73,6 +76,27 @@ Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
 Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2"];
+
+// Random announcements.
+var announcements = 
+["I'm a bot!"];
+
+
+// Keywords of blocked songs
+var blockedSongs = [
+    "Rick Roll",
+    "GANGNAM",
+    "The Fox",
+    "The Fox [Official music video HD]",
+    "10 hour"
+];
+
+// Keywords of blocked artist.
+var blockedArtists = [
+    "Rick Astley",
+    "Miley Cyrus"
+];
+
  
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
  
@@ -266,6 +290,9 @@ Funbot.pubVars.command = false;
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
  
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
+API.on(API.DJ_ADVANCE, listener);
+window.setInterval(sendAnnouncement, 1000 * announcementTick);
+
  
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
@@ -274,7 +301,6 @@ var JoinMsg = ["@user has jonied!","welcome @user!","Hey there @user!","Glad you
 r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username));
 }
- 
 
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.data }, 500);
@@ -332,38 +358,54 @@ botMethods.cleanString = function(string){
     return string.replace(/&#39;/g, "'").replace(/&amp;/g, "&").replace(/&#34;/g, "\"").replace(/&#59;/g, ";").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 };
    
-   botMethods.djAdvanceEvent = function(data){
-    clearTimeout(Funbot.pubVars.skipOnExceed);
-    if(Funbot.misc.lockSkipping){
-        API.moderateAddDJ(Funbot.misc.lockSkipped);
-        Funbot.misc.lockSkipped = "0";
-        Funbot.misc.lockSkipping = false;
-        setTimeout(function(){ API.moderateRoomProps(false, true); }, 500);
+    function listener(data)
+{
+    if (data == null)
+    {
+        return;
     }
-    var song = API.getMedia();
-    if(botMethods.checkHistory() > 0 && Funbot.settings.historyFilter){
-        if(API.getUser().permission < 2){
-            //API.sendChat("This song is in the history! You should make me a mod so that I could skip it!");
-        }else if(API.getUser().permission > 1){
-            //API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
-            //API.moderateForceSkip();
-        }else if(song.duration > Funbot.settings.maxLength * 60){
-            Funbot.pubVars.skipOnExceed = setTimeout( function(){
-                //API.sendChat("@"+ API.getDJ().username +" You have now played for as long as this room allows, time to let someone else have the booth!");
-               // API.moderateForceSkip();
-            }, Funbot.settings.maxLength * 60000);
-            API.sendChat("@"+ API.getDJ().username +" This song will be skipped " + Funbot.settings.maxLength + " minutes from now because it exceeds the max song length.");
-        }else{
-            setTimeout(function(){
-                if(botMethods.checkHistory() > 0 && Funbot.settings.historyFilter){
-                    //API.sendChat("@" + API.getDJ().username + ", playing songs that are in the history isn't allowed, please check next time! Skipping..");
-                    //API.moderateForceSkip();
-                };
-            }, 1500);
+ 
+    var title = data.media.title;
+    var author = data.media.author;
+    for (var i = 0; i < blockedSongs.length; i++)
+    {
+        if (title.indexOf(blockedSongs[i]) != -1 || author.indexOf(blockedArtists[i]) != -1)
+        {
+            API.moderateForceSkip();
+            chatMe("I Skipped: \"" + title + "\" because it is blocked.");
+            return;
         }
     }
-};
  
+    var songLenRaw = $("#time-remaining-value").text();
+    var songLenParts = songLenRaw.split(":");
+    var songLen = (parseInt(songLenParts[0].substring(1)) * 60) + parseInt(songLenParts[1]);
+    if (songLen >= songBoundary)
+    {
+        window.setTimeout(skipLongSong, 1000 * songBoundary);
+    }
+}
+ 
+function skipLongSong()
+{
+    API.moderateForceSkip();
+    chatMe("Skipping song because it has exceeded the song limit (" + (songBoundary / 60) + " minutes.)");
+}
+ 
+function sendAnnouncement()
+{
+        if (lastAnnouncement++ >= announcements.length - 1)
+        {
+                lastAnnouncement = 0;
+        }
+    chatMe(announcements[lastAnnouncement]);
+}
+ 
+function chatMe(msg)
+{
+        API.sendChat(msg);
+};
+
     API.on(API.CHAT, function(data){
         if(data.message.indexOf('.') === 0){
             var msg = data.message, from = data.from, fromID = data.fromID;
