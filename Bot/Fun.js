@@ -401,6 +401,16 @@ botMethods.cleanString = function(string){
                             API.sendChat("This command requires Bouncer only!");
                         }
                         break;
+                        
+                case "lockskip":
+                       if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                            API.moderateLockWaitList(true);
+                        setTimeout("API.moderateForceSkip();", 700);
+                        setTimeout("API.moderateLockWaitList(false);", 1000);
+                            }else{
+                            API.sendChat("This command requires Bouncer only!");
+                        }
+                        break;
                   
                 case "say":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
