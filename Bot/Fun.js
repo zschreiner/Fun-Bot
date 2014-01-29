@@ -291,8 +291,12 @@ Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.l
  
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, listener);
+API.on(API.DJ_ADVANCE, woot);
 window.setInterval(sendAnnouncement, 1000 * announcementTick);
 
+function woot(){
+$('#woot').click();
+}
  
 API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
@@ -300,7 +304,6 @@ function UserJoin(user)
 var JoinMsg = ["@user has jonied!","welcome @user!","Hey there @user!","Glad you came by @user"];
 r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username));
-$('#woot').click();
 }
 
 function djAdvanceEvent(data){
