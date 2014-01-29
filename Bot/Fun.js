@@ -873,6 +873,21 @@ botMethods.cleanString = function(string){
         }
     });
     
+    API.on(API.CHAT, function(data){
+        msg = data.message.toLowerCase(), chatID = data.chatID;
+ 
+        for(var i = 0; i < Funbot.filters.beggerWords.length; i++){
+            if(msg.indexOf(Funbot.filters.beggerWords[i].toLowerCase()) > -1 && Funbot.settings.beggerFilter){
+                API.moderateDeleteChat(chatID);
+                responses = ["Good idea @{beggar}!  Don't earn your fans or anything thats so yesterday", "Guys @{beggar} asked us to fan him!  Lets all totally do it! ಠ_ಠ", "srsly @{beggar}? ಠ_ಠ", "@{beggar}.  Earning his fans the good old fashioned way.  Hard work and elbow grease.  A true american."];
+                r = Math.floor(Math.random() * responses.length);
+                API.sendChat(responses[r].replace("{beggar}", data.from));
+            }
+        }
+ 
+    });
+    
+    
     
     API.on(API.CHAT, function(data){
         msg = data.message.toLowerCase(), chatID = data.chatID, fromID = data.fromID;
