@@ -600,10 +600,42 @@ function chatMe(msg)
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
+                        break;  
+                
+                
+                        
+                   case "author":
+                   case "authors":
+                   case "creator":
+                        if(Funbot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                           API.sendChat(Funbot.misc.origin);
+                           Funbot.misc.ready = false;
+                           setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
+                        }
+                        break;
+
+                        
+                   case "beggerfilter":
+                   case "bf":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1) Funbot.settings.beggerFilter ? API.sendChat("Begger filter is enabled") : API.sendChat("Begger filter is disabled");
+                        botMethods.save();
                         break;
                         
-                case "status":
-                       if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                   case "tbf":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                            if(Funbot.settings.beggerFilter){
+                                Funbot.settings.beggerFilter = false;
+                                API.sendChat("Bot will no longer filter fan begging.");
+                            }else{
+                                Funbot.settings.beggerFilter = true;
+                                API.sendChat("Bot will now filter fan begging.");
+                            }
+                        }
+                        botMethods.save();
+                        break;
+                        
+                   case "status":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             var response = "";
                             var currentTime = new Date().getTime();
                             var minutes = Math.floor((currentTime - joined) / 60000);
@@ -624,7 +656,7 @@ function chatMe(msg)
                         }
                         break;
  
-                case "fortune":
+                  case "fortune":
                         if(typeof command[1] == "undefined"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
