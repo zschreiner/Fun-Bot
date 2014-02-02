@@ -65,7 +65,7 @@ cancel = false;
 Funbot.filters.beggerWords = new Array();
 boombot.filters.commandWords = new Array();
 
- 
+// Bot's settings
 Funbot.settings.maxLength = 10; 
 Funbot.settings.cooldown = 10; 
 Funbot.settings.staffMeansAccess = true;
@@ -76,6 +76,7 @@ Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
 
+// Admins of the bot
 Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2","52e7e02f3b79034be65bff45"];
 
 // Random announcements.
@@ -98,11 +99,11 @@ var blockedArtists = [
     "Miley Cyrus"
 ];
 
- 
+// Filter Keywords
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
 Funbot.filters.commandWords = ["!status",".changelog",".say",".catfact",".dogfact",".fortune",".songlink",".down",".join",".status",".tcf",".cf",".rules",".version",".test"];
 
- 
+// Fun Commands
 Funbot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
 Funbot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake","Strawberry Sunday", "Chocolate Chip Icecream Cone", "Cookie Dough Triple Scoop ", "Mint Chocolate Chip Icecream Cone", "Chocolate Icecream Sunday", "Banana Split with Whipped Cream", "Vanilla Icecream Cone with Sprinkles ", "Bubblegum Flavored Popcicle"];
 Funbot.misc.ball = [" It is certain",
@@ -1049,7 +1050,6 @@ function chatMe(msg)
  
         cancel = false;
     }
- 
  
     botMethods.loadStorage();
     console.log("FunBot-Script version " + Funbot.misc.version);
