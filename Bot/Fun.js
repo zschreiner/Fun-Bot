@@ -285,17 +285,19 @@ Funbot.pubVars.skipOnExceed;
 Funbot.pubVars.command = false;
  
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
- 
+window.setInterval(sendAnnouncement, 1000 * announcementTick);
+
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, listener);
 API.on(API.DJ_ADVANCE, woot);
-window.setInterval(sendAnnouncement, 1000 * announcementTick);
+API.on(API.USER_JOIN, UserJoin);
+API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+
 
 function woot(){
 $('#woot').click();
 }
  
-API.on(API.USER_JOIN, UserJoin);
 function UserJoin(user)
 {
 var JoinMsg = ["@user has joined!","welcome @user!","Hey there @user!","Glad you came by @user"];
@@ -1011,7 +1013,6 @@ function chatMe(msg)
    });
     
     
-    API.on(API.DJ_ADVANCE, DJ_ADVANCE);
     function DJ_ADVANCE(data){
         $.getJSON('http://gdata.youtube.com/feeds/api/videos/'+data.media.cid+'?v=2&alt=jsonc&callback=?', function(json){response = json.data});
         setTimeout(function(){
