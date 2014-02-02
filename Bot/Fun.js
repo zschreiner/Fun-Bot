@@ -63,12 +63,15 @@ joined = new Date().getTime();
 cancel = false;
 
 Funbot.filters.beggerWords = new Array();
+boombot.filters.commandWords = new Array();
+
  
 Funbot.settings.maxLength = 10; 
 Funbot.settings.cooldown = 10; 
 Funbot.settings.staffMeansAccess = true;
 Funbot.settings.historyFilter = true;
 Funbot.settings.beggerFilter = true;
+boombot.settings.commandFilter = true;
 Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
@@ -97,11 +100,11 @@ var blockedArtists = [
 
  
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
+Funbot.filters.commandWords = ["!status",".changelog",".say",".catfact",".dogfact",".fortune",".songlink",".down",".join",".status",".tcf",".cf",".rules",".version",".test"];
+
  
 Funbot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
- 
 Funbot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake","Strawberry Sunday", "Chocolate Chip Icecream Cone", "Cookie Dough Triple Scoop ", "Mint Chocolate Chip Icecream Cone", "Chocolate Icecream Sunday", "Banana Split with Whipped Cream", "Vanilla Icecream Cone with Sprinkles ", "Bubblegum Flavored Popcicle"];
- 
 Funbot.misc.ball = [" It is certain",
 " It is decidedly so",
 " Without a doubt",
@@ -122,7 +125,7 @@ Funbot.misc.ball = [" It is certain",
 " My sources say no",
 " Outlook not so good",
 " Very doubtful"];
- 
+
 Funbot.misc.ht = ["My magic coins says: Tails", "My magic coin says: Heads"];
 
 Funbot.misc.roll = [
@@ -621,6 +624,12 @@ function chatMe(msg)
                         botMethods.save();
                         break;
                         
+                   case "commandfilter":
+                   case "cf":
+                        if(Funbot.admins.indexOf(fromID) > -1) Funbot.settings.commandFilter ? API.sendChat("Commands filter is enabled") : API.sendChat("Commands filter is disabled");
+                        botMethods.save();
+                        break;
+                        
                    case "tbf":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             if(Funbot.settings.beggerFilter){
@@ -629,6 +638,19 @@ function chatMe(msg)
                             }else{
                                 Funbot.settings.beggerFilter = true;
                                 API.sendChat("Bot will now filter fan begging.");
+                            }
+                        }
+                        botMethods.save();
+                        break;
+                        
+                   case "tcf":
+                        if(Funbot.admins.indexOf(fromID) > -1){
+                            if(Funbot.settings.commandFilter){
+                                Funbot.settings.commandFilter = false;
+                                API.sendChat("Bot will no longer filter commands.");
+                            }else{
+                                Funbot.settings.commandFilter = true;
+                                API.sendChat("Bot will now filter commands.");
                             }
                         }
                         botMethods.save();
@@ -961,6 +983,9 @@ function chatMe(msg)
                 responses = ["Good idea @{beggar}!  Don't earn your fans or anything thats so yesterday", "Guys @{beggar} asked us to fan him!  Lets all totally do it! ಠ_ಠ", "srsly @{beggar}? ಠ_ಠ", "@{beggar}.  Earning his fans the good old fashioned way.  Hard work and elbow grease.  A true american."];
                 r = Math.floor(Math.random() * responses.length);
                 API.sendChat(responses[r].replace("{beggar}", data.from));
+            }
+            if(msg.indexOf(Funbot.filters.commandWords[i].toLowerCase()) > -1 && Funbot.settings.commandFilter){
+                API.moderateDeleteChat(chatID);
             }
         }
  
