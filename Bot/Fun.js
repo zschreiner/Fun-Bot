@@ -72,7 +72,8 @@ Funbot.settings.beggerFilter = true;
 Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
-Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2"];
+
+Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2","52e7e02f3b79034be65bff45"];
 
 // Random announcements.
 var announcements = 
