@@ -63,7 +63,7 @@ joined = new Date().getTime();
 cancel = false;
 
 Funbot.filters.beggerWords = new Array();
-boombot.filters.commandWords = new Array();
+Funbot.filters.commandWords = new Array();
 
 // Bot's settings
 Funbot.settings.maxLength = 10; 
