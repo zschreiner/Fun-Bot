@@ -295,7 +295,7 @@ window.setInterval(sendAnnouncement, 1000 * announcementTick);
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, listener);
 API.on(API.DJ_ADVANCE, woot);
-API.on(API.FRIEND_JOIN, UserJoin);
+API.on(API.USER_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 
 
@@ -305,13 +305,10 @@ $('#woot').click();
  
 function UserJoin(user)
 {
-if(API.FRIEND_JOIN !== null){
-API.sendChat("Hey there user");
-}else{
- API.sendChat("Welcome new user");
+var JoinMsg = ["@user has joined!","welcome @user!","Hey there @user!","Glad you came by @user"];
+r = Math.floor(Math.random() * JoinMsg.length);
+API.sendChat(JoinMsg[r].replace("user", user.username));
 }
-}
-
 
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.data }, 500);
@@ -1067,4 +1064,4 @@ function chatMe(msg)
         });
     }, 3000);
  
-    API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!')
+    API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
