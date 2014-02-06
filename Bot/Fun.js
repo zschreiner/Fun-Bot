@@ -295,7 +295,6 @@ window.setInterval(sendAnnouncement, 1000 * announcementTick);
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, listener);
 API.on(API.DJ_ADVANCE, woot);
-API.on(API.FRIEND_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 
 
@@ -303,7 +302,7 @@ function woot(){
 $('#woot').click();
 }
  
-function UserJoin(user)
+function ()
 {
 if(API.FRIEND_JOIN !== null){
 API.sendChat("Hey there user");
