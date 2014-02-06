@@ -305,14 +305,13 @@ $('#woot').click();
  
 function UserJoin(user)
 {
-var JoinMsg = ["Welcome back @user];
-r = Math.floor(Math.random() * JoinMsg.length);
-API.sendChat(JoinMsg[r].replace("user", user.username));
+if(API.FRIEND_JOIN !== null){
+API.sendChat("Hey there user");
 }else{
-var UJoinMsg = ["Welcome new user @user];
-r = Math.floor(Math.random() * UJoinMsg.length);
-API.sendChat(UJoinMsg[r].replace("user", user.username));
+ API.sendChat("Welcome new user");
 }
+}
+
 
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.data }, 500);
