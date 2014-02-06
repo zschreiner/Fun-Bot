@@ -307,7 +307,7 @@ function UserJoin(user)
 {
 if(API.FRIEND_JOIN !== null){
 API.sendChat("Hey there user");
-}else{
+}else if(API.USER_JOIN !== null){
  API.sendChat("Welcome new user");
 }
 }
