@@ -106,7 +106,8 @@ Funbot.filters.commandWords = ["!status",".changelog",".say",".catfact",".dogfac
 // Fun Commands
 Funbot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
 Funbot.misc.cookie = ["a chocolate chip cookie", "a sugar cookie", "an oatmeal raisin cookie", "a 'special' brownie", "an animal cracker", "a scooby snack", "a blueberry muffin", "a cupcake","Strawberry Sunday", "Chocolate Chip Icecream Cone", "Cookie Dough Triple Scoop ", "Mint Chocolate Chip Icecream Cone", "Chocolate Icecream Sunday", "Banana Split with Whipped Cream", "Vanilla Icecream Cone with Sprinkles ", "Bubblegum Flavored Popcicle"];
-Funbot.misc.ball = [" It is certain",
+Funbot.misc.ball = [
+" It is certain",
 " It is decidedly so",
 " Without a doubt",
 " Yes definitely",
