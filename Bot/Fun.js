@@ -485,7 +485,7 @@ function chatMe(msg)
                 case "que":
                 case "addme":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        API.moderateAddDJ();
+                        API.moderateAddDJ(dataMsg.from);
                         }
                         break;
  
