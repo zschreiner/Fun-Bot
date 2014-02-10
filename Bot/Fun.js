@@ -480,6 +480,14 @@ function chatMe(msg)
                         }
                     }
                         break;
+                        
+                        
+                case "que":
+                case "addme":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        API.moderateAddDJ(data.from);
+                        }
+                        break;
  
                 case "props":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
