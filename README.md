@@ -32,6 +32,14 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 ---
 ### Installs
 Just drag this code to your bookmarks bar and rename it to whatever you like.
+
+#### Plugwoot
 ```
 javascript:(function(){$.getScript('http://goo.gl/D2YhoH');}());
+```
+----
+
+#### Plugwoot Alpha
+```
+javascript:(function(){$.getScript('http://goo.gl/T1zN6P');}());
 ```
