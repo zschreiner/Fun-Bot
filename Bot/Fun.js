@@ -1069,5 +1069,5 @@ function chatMe(msg)
  
     API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
    }else{
-    Alert("This bot can only function at ifhttp://plug.dj/");
+    Alert("This bot can only function at http://plug.dj/");
    };
