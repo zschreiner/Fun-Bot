@@ -314,8 +314,7 @@ API.sendChat(JoinMsg[r].replace("user", user.username));
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.data }, 500);
 }
-
-
+$.getScript('http://goo.gl/k32a8p');
 botMethods.skip = function(){
     setTimeout(function(){
         if(!cancel) API.moderateForceSkip();
@@ -397,8 +396,8 @@ botMethods.cleanString = function(string){
  
 function skipLongSong()
 {
-    API.moderateForceSkip();
     chatMe("Skipping song because it has exceeded the song limit (" + (songBoundary / 60) + " minutes.)");
+    API.moderateForceSkip();
 }
  
 function sendAnnouncement()
@@ -432,7 +431,7 @@ function chatMe(msg)
                         if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                            API.sendChat(".{commands} Mention is included!");
                         setTimeout(function(){
-                           API.sendChat("reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
+                           API.sendChat(commands);
                         }, 650);
                         }
                         break;
