@@ -99,8 +99,8 @@ var blockedArtists = [
     "Miley Cyrus"
 ];
 
-// FUN BOT'S COMMANDS 
-var commands =
+// COMMANDS 
+Funbot.Cmds =
 ["reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status"];
 
 
@@ -435,10 +435,10 @@ function chatMe(msg)
                         if(typeof command[1] == "undefined"){
                             API.sendChat(".{commands} Mention is included!");
                         setTimeout(function(){
-                           API.sendChat(commands);
+                           API.sendChat(cmds);
                         }, 650);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" My commands: "+ commands);
+                            API.sendChat(command[1]+" My commands: "+ cmds);
                             API.sendChat(".{commands} Mention is included!");
                         }
                         break;
