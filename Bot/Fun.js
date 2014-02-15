@@ -100,8 +100,8 @@ var blockedArtists = [
 ];
 
 // FUN BOT'S COMMANDS 
-var commands;
-commands = ["reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status"];
+var commands =
+["reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status"];
 
 
 // Filter Keywords
@@ -319,7 +319,6 @@ API.sendChat(JoinMsg[r].replace("user", user.username));
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.data }, 500);
 }
-$.getScript('http://goo.gl/k32a8p');
 botMethods.skip = function(){
     setTimeout(function(){
         if(!cancel) API.moderateForceSkip();
@@ -431,13 +430,16 @@ function chatMe(msg)
             if(Funbot.misc.ready || Funbot.admins.indexOf(fromID) > -1 || API.getUser(data.fromID).permission > 1 || API.getUser(fromID).permission < 2){
                 switch(command[0].toLowerCase()){
  
-                case "commands":
                 case "command":
-                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                           API.sendChat(".{commands} Mention is included!");
+                case "commands":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat(".{commands} Mention is included!");
                         setTimeout(function(){
                            API.sendChat(commands);
                         }, 650);
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" My commands: "+ commands);
+                            API.sendChat(".{commands} Mention is included!");
                         }
                         break;
                 
