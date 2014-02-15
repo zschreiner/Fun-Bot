@@ -57,6 +57,7 @@ Funbot.misc.tacos = new Array();
 var songBoundary = 60 * 7;
 var announcementTick = 60 * 7;
 var lastAnnouncement = 0;
+var website = "plug.dj"
 
 joined = new Date().getTime();
  
@@ -292,7 +293,7 @@ Funbot.pubVars.command = false;
  
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
 window.setInterval(sendAnnouncement, 1000 * announcementTick);
-
+if(window.location.href === "http://plug.dj/"+website+"/"){
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, listener);
 API.on(API.DJ_ADVANCE, woot);
@@ -1067,3 +1068,6 @@ function chatMe(msg)
     }, 3000);
  
     API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
+   }else{
+    Alert("This bot can only function at ifhttp://plug.dj/");
+   };
