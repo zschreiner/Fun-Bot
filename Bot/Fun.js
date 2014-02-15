@@ -99,11 +99,6 @@ var blockedArtists = [
     "Miley Cyrus"
 ];
 
-// COMMANDS 
-Funbot.Cmds =
-["reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status"];
-
-
 // Filter Keywords
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans"];
 Funbot.filters.commandWords = ["!status",".changelog",".say",".catfact",".dogfact",".fortune",".songlink",".down",".join",".status",".tcf",".cf",".rules",".version",".test"];
@@ -435,10 +430,10 @@ function chatMe(msg)
                         if(typeof command[1] == "undefined"){
                             API.sendChat(".{commands} Mention is included!");
                         setTimeout(function(){
-                           API.sendChat(cmds);
+                           API.sendChat("reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
                         }, 650);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" My commands: "+ cmds);
+                            API.sendChat(command[1]+" My commands: reward | flipcoin | catfact | dogfact | hug | 8ball | fortune | help | whywoot | whywoot | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
                             API.sendChat(".{commands} Mention is included!");
                         }
                         break;
