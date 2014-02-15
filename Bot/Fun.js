@@ -77,7 +77,7 @@ Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
 
 // Admins of the bot
-Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2","52e7e02f3b79034be65bff45"];
+Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2"];
 
 // Random announcements.
 var announcements = 
@@ -1057,7 +1057,7 @@ function chatMe(msg)
  
     setTimeout(function(){
         $.getScript('http://goo.gl/9vurzR');
-    }, 1000);
+    }, 700);
  
     setTimeout(function(){
         SC.initialize({
