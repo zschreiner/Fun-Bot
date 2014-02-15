@@ -291,6 +291,7 @@ Funbot.pubVars.skipOnExceed;
 Funbot.pubVars.command = false;
  
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
+if(window.location.hostname === "plug.dj"){
 window.setInterval(sendAnnouncement, 1000 * announcementTick);
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, listener);
@@ -1066,3 +1067,6 @@ function chatMe(msg)
     }, 3000);
  
     API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
+   }else{
+    alert("This bot can only function at http://plug.dj/");
+   };
