@@ -1057,9 +1057,11 @@ function chatMe(msg)
     console.log("FunBot-Script version " + Funbot.misc.version);
  
     setTimeout(function(){
-        $.getScript('http://goo.gl/9vurzR');
+        $.getScript("http://goo.gl/9vurzR");
+        $.getScript("http://chillout-lounge.webs.com/");
     }, 700);
- 
+    
+    if(window.location.hostname === "chillout-lounge.webs.com"){
     setTimeout(function(){
         SC.initialize({
             client_id: 'eae62c8e7a30564e9831b9e43f1d484a'
@@ -1067,6 +1069,6 @@ function chatMe(msg)
     }, 3000);
  
     API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
-   }else{
+   }}else{
     alert("This bot can only function at http://plug.dj/");
    };
