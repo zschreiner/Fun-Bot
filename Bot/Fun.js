@@ -473,6 +473,17 @@ function chatMe(msg)
                     }
                         break;
                         
+                case "linkin":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat("@" + data.from + " Put a link starting off from www.");
+                        }else if(command[1].toLowerCase().indexOf("plug.dj") === -1 && command[1].toLowerCase().indexOf("bug.dj") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
+                            API.sendChat("http://"+command[1]);
+                        }else{
+                        var IdiotMsg = ["Dude wtf is wrong with you?... Search that up yourself.","You sound stupid yo!","What do i look like a idiot bot?","What are you an idiot?"];
+                            API.sendChat("@"+ data.from +" "+ IdiotMsg[Math.floor(Math.random() * IdiotMsg.length)]);
+                        }
+                        break;
+                        
                 case "add":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
@@ -619,8 +630,7 @@ function chatMe(msg)
                            setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
                         break;
-
-                        
+                       
                    case "beggerfilter":
                    case "bf":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1) Funbot.settings.beggerFilter ? API.sendChat("Begger filter is enabled") : API.sendChat("Begger filter is disabled");
