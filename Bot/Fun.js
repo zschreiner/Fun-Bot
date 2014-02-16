@@ -500,6 +500,27 @@ function chatMe(msg)
                         }
                     }
                         break;
+                        
+                case "songlink":
+                        if(API.getMedia().format == 1){
+                            API.sendChat("@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
+                        }else{
+                            var id = API.getMedia().cid;
+                            SC.get('/tracks', { ids: id,}, function(tracks) {
+                                API.sendChat("@"+data.from+" "+tracks[0].permalink_url);
+                            });
+                        }
+                        break;
+ 
+                    case "download":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat("Download your song free here: http://www.vebsi.com/");
+                        }else if(command[1].indexOf("@") > -1){
+                            API.sendChat(command[1]+" Download your song free here: http://www.vebsi.com/");
+                        }else{
+                            API.sendChat("Download your song free here: http://www.vebsi.com/");
+                        }
+                        break;
  
                 case "woot":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
