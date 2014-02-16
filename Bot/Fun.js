@@ -466,11 +466,11 @@ function chatMe(msg)
                   
                 case "say":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
-                            }else{
-                            API.sendChat(command[1]);
+                         if(typeof command[1] === "undefined"){
+                         API.sendChat(command[1]);
+                        }}else{
+                         API.sendChat("This command requires Bouncer only!");
                         }
-                    }
                         break;
                         
                 case "linkin":
