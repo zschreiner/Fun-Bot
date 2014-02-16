@@ -465,10 +465,9 @@ function chatMe(msg)
                         break;
                   
                 case "say":
-                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                         if(typeof command[1] === "undefined"){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
                          API.sendChat(command[1]);
-                        }}else{
+                        }else{
                          API.sendChat("This command requires Bouncer only!");
                         }
                         break;
