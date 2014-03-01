@@ -54,7 +54,7 @@ Funbot.misc.ready = true;
 Funbot.misc.lockSkipping = false;
 Funbot.misc.lockSkipped = "0";
 Funbot.misc.tacos = new Array();
-var songBoundary = 60 * 1;
+var songBoundary = 60 * 10;
 var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
 
