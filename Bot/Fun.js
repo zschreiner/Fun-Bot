@@ -372,7 +372,7 @@ botMethods.cleanString = function(string){
         return;
     }
  
-    var title = data..media.title;
+    var title = data.media.title;
     var author = data.media.author;
     for (var i = 0; i < blockedSongs.length; i++)
     {
