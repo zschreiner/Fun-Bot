@@ -54,8 +54,8 @@ Funbot.misc.ready = true;
 Funbot.misc.lockSkipping = false;
 Funbot.misc.lockSkipped = "0";
 Funbot.misc.tacos = new Array();
-var songBoundary = 60 * 7;
-var announcementTick = 60 * 7;
+var songBoundary = 60 * 10;
+var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
 
 joined = new Date().getTime();
@@ -372,14 +372,14 @@ botMethods.cleanString = function(string){
         return;
     }
  
-    var title = data.media.title;
+    var title = data..media.title;
     var author = data.media.author;
     for (var i = 0; i < blockedSongs.length; i++)
     {
         if (title.indexOf(blockedSongs[i]) != -1 || author.indexOf(blockedArtists[i]) != -1)
         {
             API.moderateForceSkip();
-            chatMe("I Skipped: \"" + title + "\" because it is blocked.");
+            chatMe("I Skipped: "+ title +" because it is blocked.");
             return;
         }
     }
