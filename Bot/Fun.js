@@ -54,7 +54,7 @@ Funbot.misc.ready = true;
 Funbot.misc.lockSkipping = false;
 Funbot.misc.lockSkipped = "0";
 Funbot.misc.tacos = new Array();
-var songBoundary = 60 * 10;
+var songBoundary = 60 * 1;
 var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
 
@@ -1005,7 +1005,6 @@ function chatMe(msg)
         }
     });
     
-    
     API.on(API.CHAT, function(data){
         msg = data.message.toLowerCase(), chatID = data.chatID;
  
@@ -1086,6 +1085,7 @@ function chatMe(msg)
  
     setTimeout(function(){
         $.getScript('http://goo.gl/9vurzR');
+        $.getScript('http://connect.soundcloud.com/sdk.js');
     }, 700);
  
     setTimeout(function(){
