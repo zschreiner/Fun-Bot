@@ -1006,6 +1006,7 @@ function chatMe(msg)
     
     API.on(API.CHAT, function(data){
         msg = data.message.toLowerCase(), chatID = data.chatID;
+        plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
  
         for(var i = 0; i < Funbot.filters.beggerWords.length; i++){
             if(msg.indexOf(Funbot.filters.beggerWords[i].toLowerCase()) > -1 && Funbot.settings.beggerFilter){
@@ -1016,6 +1017,9 @@ function chatMe(msg)
             }
             if(msg.indexOf(Funbot.filters.commandWords[i].toLowerCase()) > -1 && Funbot.settings.commandFilter){
                 API.moderateDeleteChat(chatID);
+            }
+            if(msg.indexOf(plugRoomLinkPatt)) {
+              API.moderateDeleteChat(chatID);
             }
         }
  
