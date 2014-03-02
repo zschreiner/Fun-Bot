@@ -1006,8 +1006,7 @@ function chatMe(msg)
     
     API.on(API.CHAT, function(data){
         msg = data.message.toLowerCase(), chatID = data.chatID;
-        plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
- 
+        
         for(var i = 0; i < Funbot.filters.beggerWords.length; i++){
             if(msg.indexOf(Funbot.filters.beggerWords[i].toLowerCase()) > -1 && Funbot.settings.beggerFilter){
                 API.moderateDeleteChat(chatID);
@@ -1017,12 +1016,6 @@ function chatMe(msg)
             }
             if(msg.indexOf(Funbot.filters.commandWords[i].toLowerCase()) > -1 && Funbot.settings.commandFilter){
                API.moderateDeleteChat(chatID);
-            }
-            if(msg.indexOf("https://plug.dj/") > -1 || msg.indexOf("www.plug.dj/") > -1 || msg.indexOf("plug.dj/") > -1){
-               API.moderateDeleteChat(chatID);
-               responses = ["Get faggot @{user}, Promoting other lobbies in here isn't allowed!","Don't spam room links you ass clown, @{user}","@{user} really?! ಠ_ಠ"];
-               r = Math.floor(Math.random() * responses.length);
-               API.sendChat(responses[r].replace("{user}", data.from));
             }
         }
  
