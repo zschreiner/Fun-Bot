@@ -102,7 +102,7 @@ var blockedArtists = [
 // Filter Keywords
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans","need fan"];
 Funbot.filters.commandWords = ["!status",".changelog",".say",".catfact",".dogfact",".fortune",".songlink",".down",".join",".status",".tcf",".cf",".rules",".version",".test"];
-Funbot.filters.SpamWords = "/(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig";
+Funbot.filters.spamWords = "/(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig";
 
 // Fun misc
 Funbot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
@@ -665,7 +665,7 @@ function chatMe(msg)
                         
                    case "linkp":
                    case "lp":
-                        if(Funbot.admins.indexOf(fromID) > -1) Funbot.settings.SpamFilter ? API.sendChat("PromotingLinks filter is enabled") : API.sendChat("PromotingLinks filter is disabled");
+                        if(Funbot.admins.indexOf(fromID) > -1) Funbot.settings.spamFilter ? API.sendChat("PromotingLinks filter is enabled") : API.sendChat("PromotingLinks filter is disabled");
                         botMethods.save();
                         break;     
                         
