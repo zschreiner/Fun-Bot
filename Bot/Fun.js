@@ -1039,7 +1039,7 @@ function chatMe(msg)
             if(msg.indexOf(Funbot.filters.commandWords[i].toLowerCase()) > -1 && Funbot.settings.commandFilter){
                 API.moderateDeleteChat(chatID);
             }
-            if(msg.indexOf(Funbot.filters.SpamWords[i].toLowerCase()) > -1 && Funbot.settings.SpamFilter){
+            if(msg.indexOf(Funbot.filters.spamWords[i].toLowerCase()) > -1 && Funbot.settings.spamFilter){
                 API.moderateDeleteChat(chatID);
                 responses = ["Hey Faggot @{user}, You can't promote other lobbies in here!","Seriously @{user}? ಠ_ಠ","Promoting link in here isn't allowed!! @{user}"];
                 r = Math.floor(Math.random() * responses.length);
