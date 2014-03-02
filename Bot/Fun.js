@@ -61,7 +61,7 @@ cancel = false;
 
 Funbot.filters.beggerWords = new Array();
 Funbot.filters.commandWords = new Array();
-Funbot.filters.SpamWords = new Array();
+Funbot.filters.spamWords = new Array();
 
 
 // Bot's settings
@@ -720,7 +720,7 @@ function chatMe(msg)
                             }
                             hours == 0 ? response = "Running for " + minutes + "m " : response = "Running for " + hours + "h " + minutes + "m";
                             response = response + " | Begger filter: "+ Funbot.settings.beggerFilter;
-                            response = response + " | Links filter: "+ Funbot.settings.SpamFilter;
+                            response = response + " | Links filter: "+ Funbot.settings.spamFilter;
                             response = response + " | History filter: "+ Funbot.settings.historyFilter;
                             response = response + " | MaxLength: " + Funbot.settings.maxLength + "m";
                             response = response + " | Cooldown: " + Funbot.settings.cooldown + "s";
