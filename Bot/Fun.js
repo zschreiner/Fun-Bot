@@ -1020,7 +1020,7 @@ function chatMe(msg)
             }
             if(msg.indexOf("https://plug.dj/") > -1 || msg.indexOf("www.plug.dj/") > -1 || msg.indexOf("plug.dj/") > -1){
                API.moderateDeleteChat(chatID);
-               responses = ["Get faggot @{user}, Promoting other lobbies in here isn't allowed!", "Don't spam room links you ass clown, @{user}"];
+               responses = ["Get faggot @{user}, Promoting other lobbies in here isn't allowed!","Don't spam room links you ass clown, @{user}","@{user} really?! ಠ_ಠ"];
                r = Math.floor(Math.random() * responses.length);
                API.sendChat(responses[r].replace("{user}", data.from));
             }
