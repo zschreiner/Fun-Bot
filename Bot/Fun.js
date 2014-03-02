@@ -48,12 +48,9 @@ toSave = {};
 toSave.settings = Funbot.settings;
 toSave.moderators = Funbot.moderators;
  
-Funbot.misc.version = "1.0.32";
+Funbot.misc.version = "1.0.34";
 Funbot.misc.origin = "This bot was created by DJ - ɴᴇᴏɴ - TFL, and it is copyrighted!";
 Funbot.misc.ready = true;
-Funbot.misc.lockSkipping = false;
-Funbot.misc.lockSkipped = "0";
-Funbot.misc.tacos = new Array();
 var songBoundary = 60 * 10;
 var announcementTick = 60 * 10;
 var lastAnnouncement = 0;
@@ -64,6 +61,8 @@ cancel = false;
 
 Funbot.filters.beggerWords = new Array();
 Funbot.filters.commandWords = new Array();
+Funbot.filters.SpamWords = new Array();
+
 
 // Bot's settings
 Funbot.settings.maxLength = 10; 
@@ -72,6 +71,7 @@ Funbot.settings.staffMeansAccess = true;
 Funbot.settings.historyFilter = true;
 Funbot.settings.beggerFilter = true;
 Funbot.settings.commandFilter = true;
+Funbot.settings.SpamFilter = true;
 Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
@@ -102,6 +102,7 @@ var blockedArtists = [
 // Filter Keywords
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans","need fan"];
 Funbot.filters.commandWords = ["!status",".changelog",".say",".catfact",".dogfact",".fortune",".songlink",".down",".join",".status",".tcf",".cf",".rules",".version",".test"];
+Funbot.filters.SpamWords = "/(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig";
 
 // Fun misc
 Funbot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
@@ -662,6 +663,12 @@ function chatMe(msg)
                         botMethods.save();
                         break;
                         
+                   case "plinks":
+                   case "pl":
+                        if(Funbot.admins.indexOf(fromID) > -1) Funbot.settings.SpamFilter ? API.sendChat("PromotingLinks filter is enabled") : API.sendChat("PromotingLinks filter is disabled");
+                        botMethods.save();
+                        break;     
+                        
                    case "tbf":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             if(Funbot.settings.beggerFilter){
@@ -700,6 +707,7 @@ function chatMe(msg)
                             }
                             hours == 0 ? response = "Running for " + minutes + "m " : response = "Running for " + hours + "h " + minutes + "m";
                             response = response + " | Begger filter: "+ Funbot.settings.beggerFilter;
+                            response = response + " | Links filter: "+ Funbot.settings.SpamFilter;
                             response = response + " | History filter: "+ Funbot.settings.historyFilter;
                             response = response + " | MaxLength: " + Funbot.settings.maxLength + "m";
                             response = response + " | Cooldown: " + Funbot.settings.cooldown + "s";
@@ -1017,6 +1025,12 @@ function chatMe(msg)
             }
             if(msg.indexOf(Funbot.filters.commandWords[i].toLowerCase()) > -1 && Funbot.settings.commandFilter){
                 API.moderateDeleteChat(chatID);
+            }
+            if(msg.indexOf(Funbot.filters.SpamWords[i].toLowerCase()) > -1 && Funbot.settings.SpamFilter){
+                API.moderateDeleteChat(chatID);
+                responses = ["Hey Faggot @{user}, You can't promote other lobbies in here!","Seriously @{user}? ಠ_ಠ","Promoting link in here isn't allowed!! @{user}"];
+                r = Math.floor(Math.random() * responses.length);
+                API.sendChat(responses[r].replace("{user}", data.from));
             }
         }
  
