@@ -61,7 +61,7 @@ cancel = false;
 
 Funbot.filters.beggerWords = new Array();
 Funbot.filters.commandWords = new Array();
-Funbot.filters.spamWords = new Array();
+Funbot.filters.linkWords = new Array();
 
 
 // Bot's settings
@@ -71,7 +71,7 @@ Funbot.settings.staffMeansAccess = true;
 Funbot.settings.historyFilter = true;
 Funbot.settings.beggerFilter = true;
 Funbot.settings.commandFilter = true;
-Funbot.settings.spamFilter = true;
+Funbot.settings.linkFilter = true;
 Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
@@ -102,7 +102,7 @@ var blockedArtists = [
 // Filter Keywords
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans","need fan"];
 Funbot.filters.commandWords = ["!status",".changelog",".say",".catfact",".dogfact",".fortune",".songlink",".down",".join",".status",".tcf",".cf",".rules",".version",".test"];
-Funbot.filters.spamWords = "/(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig";
+Funbot.filters.linkWords = ["/(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig"];
 
 // Fun misc
 Funbot.misc.tacos = ["blunt","kush","Chemo","Locoweed","marijuana","Ganja"];
@@ -665,7 +665,7 @@ function chatMe(msg)
                         
                    case "linkp":
                    case "lp":
-                        if(Funbot.admins.indexOf(fromID) > -1) Funbot.settings.spamFilter ? API.sendChat("PromotingLinks filter is enabled") : API.sendChat("PromotingLinks filter is disabled");
+                        if(Funbot.admins.indexOf(fromID) > -1) Funbot.settings.linkFilter ? API.sendChat("PromotingLinks filter is enabled") : API.sendChat("PromotingLinks filter is disabled");
                         botMethods.save();
                         break;     
                         
@@ -697,11 +697,11 @@ function chatMe(msg)
                         
                    case "tlp":
                         if(Funbot.admins.indexOf(fromID) > -1){
-                            if(Funbot.settings.spamFilter){
-                                Funbot.settings.spamFilter = false;
+                            if(Funbot.settings.linkFilter){
+                                Funbot.settings.linkFilter = false;
                                 API.sendChat("Bot will no longer filter links promoting.");
                             }else{
-                                Funbot.settings.spamFilter = true;
+                                Funbot.settings.linkFilter = true;
                                 API.sendChat("Bot will now filter links promoting.");
                             }
                         }
@@ -720,7 +720,7 @@ function chatMe(msg)
                             }
                             hours == 0 ? response = "Running for " + minutes + "m " : response = "Running for " + hours + "h " + minutes + "m";
                             response = response + " | Begger filter: "+ Funbot.settings.beggerFilter;
-                            response = response + " | Links filter: "+ Funbot.settings.spamFilter;
+                            response = response + " | Links filter: "+ Funbot.settings.linkFilter;
                             response = response + " | History filter: "+ Funbot.settings.historyFilter;
                             response = response + " | MaxLength: " + Funbot.settings.maxLength + "m";
                             response = response + " | Cooldown: " + Funbot.settings.cooldown + "s";
@@ -1039,7 +1039,7 @@ function chatMe(msg)
             if(msg.indexOf(Funbot.filters.commandWords[i].toLowerCase()) > -1 && Funbot.settings.commandFilter){
                 API.moderateDeleteChat(chatID);
             }
-            if(msg.indexOf(Funbot.filters.spamWords[i].toLowerCase()) > -1 && Funbot.settings.spamFilter){
+            if(msg.indexOf(Funbot.filters.linkWords[i].toLowerCase()) > -1 && Funbot.settings.linkFilter){
                 API.moderateDeleteChat(chatID);
                 responses = ["Hey Faggot @{user}, You can't promote other lobbies in here!","Seriously @{user}? ಠ_ಠ","Promoting link in here isn't allowed!! @{user}"];
                 r = Math.floor(Math.random() * responses.length);
