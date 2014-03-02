@@ -663,8 +663,8 @@ function chatMe(msg)
                         botMethods.save();
                         break;
                         
-                   case "plinks":
-                   case "pl":
+                   case "linkp":
+                   case "lp":
                         if(Funbot.admins.indexOf(fromID) > -1) Funbot.settings.SpamFilter ? API.sendChat("PromotingLinks filter is enabled") : API.sendChat("PromotingLinks filter is disabled");
                         botMethods.save();
                         break;     
@@ -694,6 +694,19 @@ function chatMe(msg)
                         }
                         botMethods.save();
                         break;
+                        
+                   case "tlp":
+                        if(Funbot.admins.indexOf(fromID) > -1){
+                            if(Funbot.settings.spamFilter){
+                                Funbot.settings.spamFilter = false;
+                                API.sendChat("Bot will no longer filter links promoting.");
+                            }else{
+                                Funbot.settings.spamFilter = true;
+                                API.sendChat("Bot will now filter links promoting.");
+                            }
+                        }
+                        botMethods.save();
+                        break;     
                         
                    case "status":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
