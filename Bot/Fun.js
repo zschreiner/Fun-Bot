@@ -1016,10 +1016,13 @@ function chatMe(msg)
                 API.sendChat(responses[r].replace("{beggar}", data.from));
             }
             if(msg.indexOf(Funbot.filters.commandWords[i].toLowerCase()) > -1 && Funbot.settings.commandFilter){
-                API.moderateDeleteChat(chatID);
+               API.moderateDeleteChat(chatID);
             }
-            if(msg.indexOf(plugRoomLinkPatt)) {
-              API.moderateDeleteChat(chatID);
+            if(msg.indexOf("https://plug.dj/") !== 1 || msg.indexOf("www.plug.dj/") !== 1 || msg.indexOf("plug.dj/") !== 1){
+               API.moderateDeleteChat(chatID);
+               responses = ["Get faggot @{user}, Promoting other lobbies in here isn't allowed!", "Don't spam room links you ass clown, @{user}"];
+               r = Math.floor(Math.random() * responses.length);
+               API.sendChat(responses[r].replace("{user}", data.from));
             }
         }
  
