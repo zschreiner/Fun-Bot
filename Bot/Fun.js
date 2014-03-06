@@ -99,7 +99,7 @@ var blockedArtists = [
 
 // Filter Keywords
 Funbot.filters.beggerWords = ["fanme","fan me","fan4fan","fan 4 fan","fan pls","fans please","need fan","more fan","fan back","give me fans","gimme fans","need fan"];
-Funbot.filters.commandWords = [".reward",".add",".flipcoin",".catfact",".dogfact",".hug ",".8ball ",".fortune",".songlink",".download",".help",".whywoot",".whymeh",".props",".votes",".woot",".meh",".say",".version",".userstats @",".mystats",".source",".roomstats",".roomstats2",".register"];
+Funbot.filters.commandWords = [".reward",".add",".addsong",".flipcoin",".catfact",".dogfact",".hug ",".8ball ",".fortune",".songlink",".download",".help",".whywoot",".whymeh",".props",".votes",".woot",".meh",".say",".version",".userstats @",".mystats",".source",".roomstats",".roomstats2",".register",".join",".leave",".roll"];
 
 
 // Fun misc
@@ -429,10 +429,10 @@ function chatMe(msg)
                         if(typeof command[1] == "undefined"){
                             API.sendChat(".{commands} Mention is included!");
                         setTimeout(function(){
-                           API.sendChat("reward | add | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
+                           API.sendChat("reward | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
                         }, 650);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" My commands: reward | add | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
+                            API.sendChat(command[1]+" My commands: reward | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
                         }
                         break;
                 
@@ -482,6 +482,7 @@ function chatMe(msg)
                         break;
                         
                 case "add":
+                case "addsong":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                             $(".icon-curate").click();
