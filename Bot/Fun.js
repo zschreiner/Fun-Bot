@@ -313,8 +313,34 @@ function djAdvanceEvent(data){
 botMethods.skip = function(){
     setTimeout(function(){
     return API.moderateForceSkip();
-    }, 500);
+}, 500);
 };
+
+Funbot.unhook = function(){
+setTimeout(function(){
+API.off(API.DJ_ADVANCE, djAdvanceEvent);
+API.off(API.DJ_ADVANCE, listener);
+API.off(API.DJ_ADVANCE, woot);
+API.off(API.USER_JOIN, UserJoin);
+API.off(API.DJ_ADVANCE, DJ_ADVANCE);
+API.off(API.USER_JOIN);
+API.off(API.USER_LEAVE);
+API.off(API.USER_SKIP);
+API.off(API.USER_FAN);
+API.off(API.CURATE_UPDATE);
+API.off(API.DJ_ADVANCE);
+API.off(API.VOTE_UPDATE);
+API.off(API.CHAT);
+}, 500);
+};
+
+Funbot.hook = function(){
+setTimeout(function(){
+(function(){$.getScript('http://goo.gl/MMsPi1');}());
+}, 500);
+};
+ 
+ 
  
 botMethods.load = function(){
     toSave = JSON.parse(localStorage.getItem("FunbotSave"));
@@ -594,6 +620,37 @@ function chatMe(msg)
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
                         break;
+                        
+                case "reload":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                           API.sendChat("Now reloading script...");
+                        setTimeout(function(){
+                           Funbot.unhook();
+                        }, 150);
+                        setTimeout(function(){
+                           Funbot.hook();
+                        }, 550);
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                        }
+                        break;
+                        
+                    case "die":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                           API.sendChat('Unhooking Events...');
+                        setTimeout(function(){
+                           API.sendChat('Deleting bot data...');
+                        }, 150);
+                        setTimeout(function(){
+                           API.sendChat('Consider me dead');
+                        }, 475);
+                        setTimeout(function(){
+                           Funbot.unhook();
+                        }, 700);
+                        }else{
+                           API.sendChat("This command requires bouncer +");
+                        }
+                        break;
  
                 case "whywoot":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
@@ -809,8 +866,8 @@ function chatMe(msg)
                            }
                         }
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                            mubBot.misc.ready = false;
-                            setTimeout(function(){ mubBot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
+                            Funbot.misc.ready = false;
+                            setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
                         break;
  
