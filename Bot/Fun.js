@@ -645,8 +645,6 @@ function chatMe(msg)
                         }
                         break;  
                 
-                
-                        
                    case "author":
                    case "authors":
                    case "creator":
