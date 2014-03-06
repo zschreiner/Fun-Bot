@@ -643,7 +643,7 @@ function chatMe(msg)
                         }, 150);
                         setTimeout(function(){
                            API.sendChat('Consider me dead');
-                        }, 475);
+                        }, 750);
                         setTimeout(function(){
                            Funbot.unhook();
                         }, 700);
