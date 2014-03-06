@@ -549,9 +549,12 @@ function chatMe(msg)
  
                 case "join":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
+                        setTimeout(function(data){
+                        var joindj = ["[user] Time to spin a track! :speaker:","[user] Seems like i'm up!","[user] Now joinning the booth"];
+                        r = Math.floor(Math.random() * joindj.length);
+                            API.sendChat(joindj[r].replace("user", data.from));
                             API.djJoin();
-                        }
+                        }, 500);
                         }else{
                            API.sendChat("This command requires bouncer +");
                         }
@@ -559,10 +562,12 @@ function chatMe(msg)
  
                 case "leave":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                        if(typeof command[1] === "undefined"){
+                         var leavedj = ["[user] Now leaving the dj booth...","[user] Kicking me off :(","[user] Made a pic for you! http://i.imgur.com/4uVDb6f.gif  ....Loser"];
+                        r = Math.floor(Math.random() * leavedj.length);
+                            API.sendChat(leavedj[r].replace("user", data.from));
                             API.djLeave();
-                        }
-                    }else {
+                        }, 500);
+                        }else {
                            API.sendChat("This command requires bouncer +");
                         }
                         break;
