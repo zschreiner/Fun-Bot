@@ -301,29 +301,23 @@ API.on(API.DJ_ADVANCE, DJ_ADVANCE);
 
 function woot(){
 $('#woot').click();
-}
+};
  
 function UserJoin(user)
 {
 var JoinMsg = ["@user has joined!","welcome @user!","Hey there @user!","Glad you came by @user"];
 r = Math.floor(Math.random() * JoinMsg.length);
 API.sendChat(JoinMsg[r].replace("user", user.username));
-}
+};
 
 function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.data }, 500);
-}
+};
+
 botMethods.skip = function(){
     setTimeout(function(){
-        if(msg.indexOf(".cancel") !== -1){
-        API.off(API.DJ_ADVANCE, djAdvanceEvent);
-        API.off(API.DJ_ADVANCE, listener);
-        API.off(API.DJ_ADVANCE, woot);
-        API.off(API.USER_JOIN, UserJoin);
-        API.off(API.DJ_ADVANCE, DJ_ADVANCE);
-        API.off(API.CHAT)
-    }, 3500);
-  }
+    return API.moderateForceSkip();
+    }, 500);
 };
  
 botMethods.load = function(){
@@ -453,7 +447,7 @@ function chatMe(msg)
                         
                 case "skip":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                            API.moderateForceSkip();
+                            botMethods.skip();
                             }else{
                             API.sendChat("This command requires Bouncer only!");
                         }
@@ -462,7 +456,7 @@ function chatMe(msg)
                 case "lockskip":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.moderateLockWaitList(true);
-                            setTimeout("API.moderateForceSkip();", 300);
+                            setTimeout("botMethods.skip();", 300);
                             setTimeout("API.moderateLockWaitList(false);", 600);
                             }else{
                             API.sendChat("This command requires Bouncer only!");
@@ -1101,5 +1095,5 @@ function chatMe(msg)
  
     API.sendChat('Fun Bot version '+Funbot.misc.version+' Activated!');
    }else{
-    alert("This bot can only function at http://plug.dj/");
+    alert("This bot can only function at http://plug.dj/community");
    };
