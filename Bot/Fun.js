@@ -672,7 +672,6 @@ function chatMe(msg)
                                 API.sendChat("Bot will now filter fan begging.");
                             }
                         }
-                        botMethods.save();
                         break;
                         
                    case "tcf":
@@ -685,7 +684,6 @@ function chatMe(msg)
                                 API.sendChat("Bot will now filter commands.");
                             }
                         }
-                        botMethods.save();
                         break;
                         
                    case "status":
