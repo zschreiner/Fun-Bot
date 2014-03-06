@@ -384,7 +384,7 @@ botMethods.getID = function(username){
 };
  
 botMethods.cleanString = function(string){
-    return string.replace(/&#39;/g, "'").replace(&#39;, "'").replace(/&amp;/g, "&").replace(/&#34;/g, "\"").replace(/&#59;/g, ";").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+    return string.replace(/&#39;/g, "'").replace(/&#39;/, "'").replace(/&amp;/g, "&").replace(/&#34;/g, "\"").replace(/&#59;/g, ";").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 };
    
     function listener(data)
