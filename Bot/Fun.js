@@ -72,7 +72,7 @@ Funbot.settings.interactive = true;
 Funbot.settings.ruleSkip = true;
 Funbot.settings.removedFilter = true;
 
-// Admins of the bot
+// Admins ID
 Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2"];
 
 // Random announcements.
@@ -288,14 +288,12 @@ Funbot.pubVars.skipOnExceed;
 Funbot.pubVars.command = false;
  
 Array.prototype.remove=function(){var c,f=arguments,d=f.length,e;while(d&&this.length){c=f[--d];while((e=this.indexOf(c))!==-1){this.splice(e,1)}}return this};
-if(window.location.hostname === "plug.dj"){
-window.setInterval(sendAnnouncement, 1000 * announcementTick);
+if(window.location.hostname === "plug.dj"){window.setInterval(sendAnnouncement, 1000 * announcementTick);
 API.on(API.DJ_ADVANCE, djAdvanceEvent);
 API.on(API.DJ_ADVANCE, listener);
 API.on(API.DJ_ADVANCE, woot);
 API.on(API.USER_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
-
 
 function woot(){
 $('#woot').click();
@@ -431,7 +429,7 @@ function chatMe(msg)
                            API.sendChat("reward | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
                         }, 650);
                         }else if(command[1].indexOf("@") > -1){
-                            API.sendChat(command[1]+" My commands: reward | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
+                            API.sendChat(command[1]+" My commands: reward | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status | reload | die");
                         }
                         break;
                 
