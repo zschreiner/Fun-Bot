@@ -562,7 +562,8 @@ function chatMe(msg)
  
                 case "leave":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                         var leavedj = ["[user] Now leaving the dj booth...","[user] Kicking me off :(","[user] Made a pic for you! http://i.imgur.com/4uVDb6f.gif  ....Loser"];
+                        setTimeout(function(data){
+                        var leavedj = ["[user] Now leaving the dj booth...","[user] Kicking me off :(","[user] Made a pic for you! http://i.imgur.com/4uVDb6f.gif  ....Loser"];
                         r = Math.floor(Math.random() * leavedj.length);
                             API.sendChat(leavedj[r].replace("user", data.from));
                             API.djLeave();
