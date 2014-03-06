@@ -57,11 +57,9 @@ var lastAnnouncement = 0;
 
 joined = new Date().getTime();
  
-cancel = false;
-
+// Filterng Chat
 Funbot.filters.beggerWords = new Array();
 Funbot.filters.commandWords = new Array();
-
 
 // Bot's settings
 Funbot.settings.maxLength = 10; 
