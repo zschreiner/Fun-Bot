@@ -1,4 +1,4 @@
-Fun Bot `version 1.0.46`
+Fun Bot
 =======
 
 A script which is used for [Plug.dj](http://plug.dj/communities/)
@@ -8,6 +8,8 @@ I don't mind you guys using this script just long as nothing is to be changed on
 Permission to change anything on this script, You can always contact the author at
 [Plug Lounge](http://goo.gl/cMMMc1)
 If there happen to be a bug or problem with the bot you can report issue [HERE](https://github.com/DJ-Neon05/Fun-Bot/issues). I'll work on it ASAP! Thanks :)
+
+Fun bot `version 1.0.46`
 
 You customize this bot script once you fork it.
 How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#installing-bot)
