@@ -14,7 +14,16 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 
 ###- Bot Commands
 - Bot commands are mainly to instruct the bot
-  - Moderator commands can also be used by Admins of the bot 
+  - Admins of the bot can also use the moderators commands
+  - Here are bots current commands
+  
+
+```
+commands:
+ reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 
+ 8ball | fortune | songlink | download | help | whywoot | whymeh | props | 
+ votes | woot | meh | skip | say | version | userstats | mystats | source | status
+```
 
 --
 - Filter Chat
