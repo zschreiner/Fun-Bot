@@ -310,9 +310,9 @@ function djAdvanceEvent(data){
     setTimeout(function(){ botMethods.data }, 500);
 };
 
-botMethods.skip = function(){
-    setTimeout(function(){
-    return API.moderateForceSkip();
+Funbot.skip = function(){
+setTimeout(function(){
+API.moderateForceSkip();
 }, 500);
 };
 
@@ -467,7 +467,7 @@ function chatMe(msg)
                         
                 case "skip":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
-                            botMethods.skip();
+                            Funbot.skip();
                         }else if(command[1].indexOf("@") > -1){
                             var SkipMsg = ["Sorry @user, This song has violated room's rule.","Now skipping @user song...","Now skipping current song..."];
                             r = Math.floor(Math.random() * SkipMsg.length);
@@ -480,7 +480,7 @@ function chatMe(msg)
                 case "lockskip":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.moderateLockWaitList(true);
-                            setTimeout("botMethods.skip();", 300);
+                            setTimeout("Funbot.skip();", 300);
                             setTimeout("API.moderateLockWaitList(false);", 600);
                             }else{
                             API.sendChat("This command requires Bouncer only!");
