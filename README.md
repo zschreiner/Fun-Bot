@@ -26,26 +26,30 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 `commands`
 
 ```
-reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 
-8ball | fortune | songlink | download | help | whywoot | whymeh | props | 
-votes | woot | meh | skip | say | version | userstats | mystats | source | status
+.reward | .reload | .die | .addsong | .flipcoin | .catfact | .dogfact | .hug | 
+.8ball | .fortune | .songlink | .download | .help | .whywoot | .whymeh | .props | 
+.votes | .woot | .meh | .skip | .say | .version | .userstats | .mystats | .source | .status
 ```
 `example 1`
 ```
 #Tools: .commands @Neon
 #plugbot: @Neon My commands are ..[commands]..
 ```
-  - More commands will be available soon!
+
+- There some commands that Mention is included!
+  - Here are the commands below that are required for mentions
+
+- More commands will be available soon!
 
 --
 ###- Filter Chat
-- There is only two chat filters (For now).
+- There is only two chat filters (for now).
 - `Begger Filter` can be Enable/Disable by using command `.tbf` This will allow bot to moderate Fan begging in chat [delete fan begging] `example 1`
       - Bot can only do this process if bot has a staff rank.
 
 `example 1`
 ```
-[message deleted]  < #Neon: Fan me
+[#Neon: Fan me] = [message deleted]
 #Plugbot: Are you serious @Neon?
 ```
 - `Command Filter` Allows bot to delete commands if a user sends out a command to chat.
