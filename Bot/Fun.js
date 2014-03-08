@@ -465,8 +465,6 @@ function chatMe(msg)
                         }else if(typeof command[1] === "undefined"){
                             API.sendChat('@'+API.getDJ().username+' '+command[1]);
                             Funbot.skip();
-                        }else{
-                            API.sendChat("This command requires Bouncer only!");
                         }
                         break;
                         
