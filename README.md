@@ -58,14 +58,14 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
   - This can allow your computer to run extra faster due to low cpu that is already being used.
   - An example screenshot [HERE](http://i1328.photobucket.com/albums/w536/Tawi_Bien/funbot_zpse09a0525.png)
         - You can toggle CPU through a various commands
+  - Whats a CPU? A central processing unit (CPU) (formerly also referred to as a central processor unit) is the hardware within a computer that carries out the instructions of a computer program by performing the basic arithmetical, logical, and input/output operations of the system.
         - Example below `example1`
-`example1`
 
 ```
 #Neon: .die
 #Plugbot: Unhooking Events...
 #plugbot: Deleting bot data...
-#plugbot: Consider me dead! `CPU Enabled`
+#plugbot: Consider me dead! [CPU Enabled]
 ```
 --
 ###- Room Stats
