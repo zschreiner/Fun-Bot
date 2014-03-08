@@ -58,6 +58,7 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 #Plugbot: Are you serious @Neon?
 ```
 - `Command Filter` Allows bot to delete commands if a user sends out a command to chat.
+  - To Enable/Disable Command Filter type `.tcf`
 
 --
 ###- Gives rewards (Fun Command)
@@ -95,18 +96,17 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 #Plugbot: @Dark 'http://youtu.be/R2N16TDszf8'
 ```
 --
-###- Remove video/Audio/Audience
+###- Remove Video/Audio/Audience
 - When the script is being function bot can automatically remove video screen/audio in order for your pc to run faster!
   - This can allow your computer to run extra faster due to low cpu that is already being used.
   - An example screenshot [HERE](http://i1328.photobucket.com/albums/w536/Tawi_Bien/funbot_zpse09a0525.png)
         - You can toggle CPU through a various commands
+  - CPU can be activated if moderators type `.die` 
         - Example below `example1`
 
 ```
 #Neon: .die
-#Plugbot: Unhooking Events...
-#plugbot: Deleting bot data...
-#plugbot: Consider me dead! [CPU Enabled]
+
 ```
   - Whats a CPU? A central processing unit (CPU) (formerly also referred to as a central processor unit) is the hardware within a computer that carries out the instructions of a computer program by performing the basic arithmetical, logical, and input/output operations of the system.
 
