@@ -1,7 +1,7 @@
-Fun Bot
+Fun Bot `version 1.0.46`
 =======
 
-A script which is used for plug.dj
+A script which is used for [Plug.dj](http://plug.dj/communities/)
 
 I don't mind you guys using this script just long as nothing is to be changed on it.
 
@@ -9,14 +9,17 @@ Permission to change anything on this script, You can always contact the author 
 [Plug Lounge](http://goo.gl/cMMMc1)
 If there happen to be a bug or problem with the bot you can report issue [HERE](https://github.com/DJ-Neon05/Fun-Bot/issues). I'll work on it ASAP! Thanks :)
 
+You customize this bot script once you fork it.
+How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#installing-bot)
+
 ---
 ## What can this bot do? ##
 
 ###- Bot Commands
 - Bot commands are mainly to instruct the bot
   - Admins of the bot can also use the moderators commands
-  - Here are bots current commands
   
+`commands`
 
 ```
 commands:
@@ -24,6 +27,8 @@ commands:
  8ball | fortune | songlink | download | help | whywoot | whymeh | props | 
  votes | woot | meh | skip | say | version | userstats | mystats | source | status
 ```
+
+  - More commands will be available soon!
 
 --
 - Filter Chat
