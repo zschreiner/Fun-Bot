@@ -62,16 +62,16 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
   - bot can also keep Users status. An example has been setup below `ex2`
 
 ```
-#Plugbot: Neon Last played: song [stats: 1 Woot | 0 Grab | 0 Meh]
+#Plugbot: Neon Last played: song [stats: 0 Woot | 0 Grab | 0 Meh]
 ```
 ```
 #Neon: .mystats
-#plugbot: @Neon [Stats: Joins: 0 | Woot: 61 | Meh: 1 | Votes: 62 | Curates: 0 | Songs: 0 | Skips: 0]
+#plugbot: @Neon [Stats: Joins: 0 | Woot: 0 | Meh: 0 | Votes: 0 | Curates: 0 | Songs: 0 | Skips: 0]
 ```
 ```
 #Neon: .roomstats
-#plugbot: Room Statistics - Woot: 0 | Meh: 0 | Votes: 0 | Curates: 0 | Songs: 290 |
-Skips: 24 | Joins: 0 | Registered Users: 4.
+#plugbot: Room Statistics - Woot: 0 | Meh: 0 | Votes: 0 | Curates: 0 | Songs: 0 |
+                            Skips: 24 | Joins: 0 | Registered Users: 0
 ```
 
 
