@@ -107,7 +107,6 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 ```
 #Neon: .die
 #Plugbot: [Re-Enables Video/Audio/Audience]
-
 ```
   - Whats a CPU? A central processing unit (CPU) (formerly also referred to as a central processor unit) is the hardware within a computer that carries out the instructions of a computer program by performing the basic arithmetical, logical, and input/output operations of the system.
 
