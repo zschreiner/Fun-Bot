@@ -85,15 +85,15 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 
 
 --
-###- Current Music/video Link
+###- Current Song/Video Link
   - If `.songlink` It'll instruct bot to give the current playing video/song URL to chat.
     - Imagine provided with can be found [HERE](http://i1328.photobucket.com/albums/w536/Tawi_Bien/songlink_zps934f6316.png?t=1394283093)
   - An example is given below `example 1`
 
 `example 1`
-```JavaScript
+```
 #Dark: .songlink
-#Plugbot: @Dark 'http://youtu.be/R2N16TDszf8'
+#Plugbot: @Dark - http://youtu.be/R2N16TDszf8
 ```
 --
 ###- Remove Video/Audio/Audience
