@@ -62,15 +62,36 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 
 --
 ###- Gives rewards (Fun Command)
+- You can command bot to give free reward to user(s) in the current lobby!
+- Fun commands such as:
+`.reward`
+`.8ball`
+`.hug`
+`.fortune`
+`.catfact`
+`.dogfact`
 
-
---
-###- Gives current songlink
-
+    - Mention is included when using `.reward` and `.hug` commands.
+`example 1` 
+```
+#Neon: .hug @USER
+#plugbot: Gives soft hugs to @USER!! <3
+```
+- More fun commands will are coming soon!
 
 --
 ###- Limits songs length
+- Bot limits song 10 min and under.
+- Song/Video that goes more than 10 min will allow bot to automatic skip. 
+  - Bot will also reason for why it has skip the song!
+  - An Example below
+`example`
 
+```
+[ Plugbot has skipped the current DJ ]
+#Plugbot: Sorry +DJ+ skipping song because it exceeded the song limit!
+```
+- Enable/Disable skipping songs... Coming soon!
 
 --
 ###- Block Songs/Artist
@@ -78,7 +99,19 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 
 --
 ###- Helps put up link
+- Usually random users can't have the opportunity to link out URLs into chat.
+- Issue fix. bot can now help none staff users to link out random URLs
+- An example is given below `example 1`
 
+`example 1`
+```
+#Neon: [URL Hidden]
+#Neon: Can you guys see the link?
+#Tools: Can't see nothing
+#Neon: .linkin www.YouTube.com/fQpgHvAYGNY
+#Plugbot: https://www.YouTube.com/fQpgHvAYGNY
+#Tools: There it is!
+```
 
 --
 ###- Greets the Joiners
