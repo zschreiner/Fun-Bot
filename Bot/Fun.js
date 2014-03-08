@@ -332,10 +332,14 @@ API.off(API.VOTE_UPDATE);
 API.off(API.CHAT);
 $('#playback').show();
 $('#audience').show();
+API.setVolume(15);
 };
 
 Funbot.hook = function(){
-(function(){$.getScript('http://goo.gl/MMsPi1');$('#playback').hide();$('#audience').hide();API.setVolume(0);}());
+(function(){$.getScript('http://goo.gl/MMsPi1');
+$('#playback').hide();
+$('#audience').hide();
+API.setVolume(0);}());
 };
 
 botMethods.load = function(){
