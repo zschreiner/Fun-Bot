@@ -78,10 +78,12 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 ```
 #Plugbot: Neon Last played: song [stats: 0 Woot | 0 Grab | 0 Meh]
 ```
+`example 1`
 ```
 #Neon: .mystats
 #plugbot: @Neon [Stats: Joins: 0 | Woot: 0 | Meh: 0 | Votes: 0 | Curates: 0 | Songs: 0 | Skips: 0]
 ```
+`example 2`
 ```
 #Neon: .roomstats
 #plugbot: Room Statistics - Woot: 0 | Meh: 0 | Votes: 0 | Curates: 0 | Songs: 0 | Skips: 24 | Joins: 0 |
