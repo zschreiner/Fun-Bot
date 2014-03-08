@@ -5,22 +5,19 @@ A script which is used for plug.dj
 
 I don't mind you guys using this script just long as nothing is to be changed on it.
 
-Permission to change anything on this script, You can always contact the author at [Plug Lounge] (http://goo.gl/cMMMc1)
-If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
+Permission to change anything on this script, You can always contact the author at
+[Plug Lounge] (http://goo.gl/cMMMc1)
+If there happen to be a bug or problem with the bot you can report issue [HERE](https://github.com/DJ-Neon05/Fun-Bot/issues). I'll work on it ASAP! Thanks :)
 
 ---
 ### What does this bot do ###
 
 - Mod commands and User commands (Admins included)
 
+
 --
 - Filter bad words
 
---
-- Gives hugs    (Fun Command)
-
---
-- Gives weeds   (Fun Command)
 
 --
 - Gives rewards (Fun Command)
@@ -37,10 +34,6 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 
 --
 - Helps put up link
-
-
---
-- Announces who Grab song
 
 
 --
