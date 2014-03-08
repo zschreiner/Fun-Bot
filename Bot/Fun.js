@@ -480,8 +480,8 @@ function chatMe(msg)
                 case "lockskip":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.moderateLockWaitList(true);
-                            setTimeout("Funbot.skip();", 300);
-                            setTimeout("API.moderateLockWaitList(false);", 600);
+                            setTimeout("Funbot.skip();", 100);
+                            setTimeout("API.moderateLockWaitList(false);", 700);
                             }else{
                             API.sendChat("This command requires Bouncer only!");
                         }
