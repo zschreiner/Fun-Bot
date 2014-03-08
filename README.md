@@ -13,7 +13,7 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 
 - Mod commands and User commands (Admins included)
 
----
+--
 - Filter bad words
 
 ---
