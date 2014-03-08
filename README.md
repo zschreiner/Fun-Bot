@@ -53,7 +53,7 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 `example 1`
 ```JavaScript
 #Dark: .songlink
-#Plugbot: @Dark '[http://youtu.be/R2N16TDszf8]'
+#Plugbot: @Dark 'http://youtu.be/R2N16TDszf8'
 ```
 --
 ###- Remove video/Audio/Audience
