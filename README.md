@@ -53,11 +53,17 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 - Remove video and audio
 
 --
-- keeps track on room stats
+Bot can keep stats of room's woots and more
+- Room stats and users stats
+  - 
 
 ```
 #Plugbot: Neon Last played: song [stats: 1 Woot | 0 Grab | 0 Meh]
+```
+```
+#Neon: .roomstats
 
+#plugbot: 
 ```
 
 ---
