@@ -53,22 +53,24 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 - Remove video and audio
 
 --
-Bot can keep stats of room's woots and more
-- Room stats and users stats
-  - 
+### Bot can keep stats of room's woots and more
+- Bot can monitor and save room's woot and other accountable statics within the room.
+  - Room stats and users stats
 
 ```
 #Plugbot: Neon Last played: song [stats: 1 Woot | 0 Grab | 0 Meh]
 ```
 ```
 #Neon: .roomstats
-
-#plugbot: 
+#plugbot: Room Statistics - Woot: 0, Meh: 0, Votes: 0, Curates: 0.
 ```
-
 ---
-### Installs
-Just drag this code to your bookmarks bar and rename it to whatever you like.
-```
+## Installing Bot
+Copy and paste this code to your bookmarks bar and rename it to whatever you like.
+```Javascript
 javascript:(function(){$.getScript('http://goo.gl/MMsPi1');}());
+```
+You can function your own bot script after forking this script.
+```JavaScript
+javascript:(function(){$.getScript('[YOUR BOT RAW URL]');}());
 ```
