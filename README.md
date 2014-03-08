@@ -54,7 +54,7 @@ votes | woot | meh | skip | say | version | userstats | mystats | source | statu
 
 
 --
-###- Ban songs (If Overplayed)
+###- Block Songs/Artist
 
 
 --
