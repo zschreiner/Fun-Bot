@@ -453,9 +453,15 @@ function chatMe(msg)
                             API.sendChat(".{commands} Mention is included!");
                         setTimeout(function(){
                            API.sendChat("reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status");
-                        }, 650);
+                        }, 100);
+                        setTimeout(function(){
+                           API.sendChat("creator | bf | cf | tbf | tcf.");
+                        }, 600);
                         }else if(command[1].indexOf("@") > -1){
                             API.sendChat(command[1]+" My commands: reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 8ball | fortune | songlink | download | help | whywoot | whymeh | props | votes | woot | meh | skip | say | version | userstats | mystats | source | status | reload | die");
+                        setTimeout(function(){
+                           API.sendChat("creator | bf | cf | tbf | tcf.");
+                        }, 600);
                         }
                         break;
                 
