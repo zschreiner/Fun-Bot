@@ -311,13 +311,10 @@ function djAdvanceEvent(data){
 };
 
 Funbot.skip = function(){
-setTimeout(function(){
 API.moderateForceSkip();
-}, 500);
 };
 
 Funbot.unhook = function(){
-setTimeout(function(){
 API.off(API.DJ_ADVANCE, djAdvanceEvent);
 API.off(API.DJ_ADVANCE, listener);
 API.off(API.DJ_ADVANCE, woot);
@@ -331,13 +328,10 @@ API.off(API.CURATE_UPDATE);
 API.off(API.DJ_ADVANCE);
 API.off(API.VOTE_UPDATE);
 API.off(API.CHAT);
-}, 500);
 };
 
 Funbot.hook = function(){
-setTimeout(function(){
 (function(){$.getScript('http://goo.gl/MMsPi1');}());
-}, 500);
 };
 
 botMethods.load = function(){
