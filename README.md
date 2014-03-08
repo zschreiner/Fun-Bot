@@ -30,27 +30,26 @@ commands:
  8ball | fortune | songlink | download | help | whywoot | whymeh | props | 
  votes | woot | meh | skip | say | version | userstats | mystats | source | status
 ```
-
   - More commands will be available soon!
 
 --
-- Filter Chat
+###- Filter Chat
 
 
 --
-- Gives rewards (Fun Command)
+###- Gives rewards (Fun Command)
 
 
 --
-- Gives current songlink
+###- Gives current songlink
 
 
 --
-- Limits songs length
+###- Limits songs length
 
 
 --
-- Ban songs (If Overplayed)
+###- Ban songs (If Overplayed)
 
 
 --
