@@ -327,7 +327,6 @@ API.off(API.CURATE_UPDATE);
 API.off(API.DJ_ADVANCE);
 API.off(API.VOTE_UPDATE);
 API.off(API.CHAT);
-$('#playback').show();
 };
 
 Funbot.hook = function(){
@@ -752,7 +751,7 @@ function chatMe(msg)
                             response = response + " | History filter: "+ Funbot.settings.historyFilter;
                             response = response + " | MaxLength: " + Funbot.settings.maxLength + "m";
                             response = response + " | Cooldown: " + Funbot.settings.cooldown + "s";
-                            response = response + " | Removed Video Filter: "+ Funbot.settings.removedFilter;
+                            response = response + " | CPU Filter: "+ Funbot.settings.removedFilter;
                             API.sendChat(response);
                         }else {
                            API.sendChat("This command requires bouncer +");
