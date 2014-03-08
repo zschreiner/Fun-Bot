@@ -12,36 +12,40 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 ---
 ## What can this bot do? ##
 
-###- Mod commands and User commands (Admins included)
-
+###- Bot Commands
+- Bot commands are mainly to instruct the bot
+  - Moderator commands can also be used by Admins of the bot 
 
 --
-- Filter bad words
+- Filter Chat
 
 
 --
 - Gives rewards (Fun Command)
 
+
 --
 - Gives current songlink
 
+
 --
 - Limits songs length
+
 
 --
 - Ban songs (If Overplayed)
 
 
 --
-- Helps put up link
+###- Helps put up link
 
 
 --
-- Greets the Joiners
+###- Greets the Joiners
 
 
 --
-- Gives out current song's link
+###- Gives out current song's link
 
 
 --
@@ -49,11 +53,20 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 
 
 --
-###- Remove video and audio
+###- Remove video/Audio/Audience
 - When the script is being function bot can automatically remove video screen/audio in order for your pc to run faster!
-        - This can allow your computer to run extra faster due to low cpu that is already being used.
+  - This can allow your computer to run extra faster due to low cpu that is already being used.
   - An example screenshot [HERE](http://i1328.photobucket.com/albums/w536/Tawi_Bien/funbot_zpse09a0525.png)
+        - You can toggle CPU through a various commands
+        - Example below `example1`
+`example1`
 
+```
+#Neon: .die
+#Plugbot: Unhooking Events...
+#plugbot: Deleting bot data...
+#plugbot: Consider me dead! `CPU Enabled`
+```
 --
 ###- Room Stats
 - Bot can monitor and save room's woot and other accountable statics within the room/user. Sends out last song's status.
