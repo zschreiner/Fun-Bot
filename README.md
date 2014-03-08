@@ -47,6 +47,7 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 --
 ###- Current Music/video Link
   - If `.songlink` It'll instruct bot to give the current playing video/song URL to chat.
+    - Imagine provided with can be found [Here](http://i1328.photobucket.com/albums/w536/Tawi_Bien/songlink_zps934f6316.png?t=1394283093)
   - An example is given below `example 1`
 
 `example 1`
