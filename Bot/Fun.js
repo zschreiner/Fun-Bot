@@ -462,9 +462,8 @@ function chatMe(msg)
                 case "skip":
                         if(API.getUser(data.fromID).permission > 1){
                             Funbot.skip();
-                        }else if(typeof command[1] === "undefined"){
-                            API.sendChat('@'+API.getDJ().username+' '+command[1]);
-                            Funbot.skip();
+                        }else{
+                           API.sendChat("This command requires Bouncer only!");
                         }
                         break;
                         
