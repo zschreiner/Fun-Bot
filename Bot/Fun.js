@@ -327,6 +327,7 @@ API.off(API.CURATE_UPDATE);
 API.off(API.DJ_ADVANCE);
 API.off(API.VOTE_UPDATE);
 API.off(API.CHAT);
+$('#playback').show();
 };
 
 Funbot.hook = function(){
