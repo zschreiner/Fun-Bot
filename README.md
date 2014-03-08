@@ -52,14 +52,14 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 
 
 --
-- Announce last song's stats
+###- Announce last song's stats
 
 
 --
 ###- Remove video and audio
 - When the script is being function bot can automatically remove video screen/audio in order for your pc to run faster!
     - This can allow your computer to run extra faster due to low cpu that is already being used.
-  - An example screen shot [Here] (http://i1328.photobucket.com/albums/w536/Tawi_Bien/funbot_zpse09a0525.png)
+  - An example screen shot [HERE] (http://i1328.photobucket.com/albums/w536/Tawi_Bien/funbot_zpse09a0525.png)
 
 --
 ###- Room Stats
