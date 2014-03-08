@@ -45,13 +45,15 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 
 
 --
-###- Gives out current song's link
+###- Current Music/video Link
+  - If `.songlink` It'll instruct bot to give the current playing video/song URL to chat.
+  - An example is given below `example 1`
 
-
---
-###- Announce last song's stats
-
-
+`example 1`
+```
+#Dark: .songlink
+#Plugbot: @Dark http://youtu.be/R2N16TDszf8
+```
 --
 ###- Remove video/Audio/Audience
 - When the script is being function bot can automatically remove video screen/audio in order for your pc to run faster!
@@ -73,7 +75,7 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 - Bot can monitor and save room's woot and other accountable statics within the room/user. Sends out last song's status.
   - Room stats and users stats
   - Your status can also be found within the bot `example1`
-  - bot can also keep Users status. An example has been setup below `example2`
+  - bot can also keep Users/Room status. An example has been setup below `example2`
 
 ```
 #Plugbot: Neon Last played: song [stats: 0 Woot | 0 Grab | 0 Meh]
