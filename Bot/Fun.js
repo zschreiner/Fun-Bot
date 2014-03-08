@@ -465,7 +465,6 @@ function chatMe(msg)
                         }else if(typeof command[1] === "undefined"){
                             API.sendChat('@'+API.getDJ().username+' '+command[1]);
                             Funbot.skip();
-                            }
                         }else{
                             API.sendChat("This command requires Bouncer only!");
                         }
@@ -476,7 +475,7 @@ function chatMe(msg)
                             API.moderateLockWaitList(true);
                             setTimeout("Funbot.skip();", 100);
                             setTimeout("API.moderateLockWaitList(false);", 700);
-                            }else{
+                        }else{
                             API.sendChat("This command requires Bouncer only!");
                         }
                         break;
@@ -506,16 +505,16 @@ function chatMe(msg)
                         if(typeof command[1] === "undefined"){
                             $(".icon-curate").click();
                             $($(".curate").children(".menu").children().children()[0]).mousedown();
+                            }
                         }
-                    }
                         break;
  
                 case "props":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat("@"+ data.from +" just gave props to @"+ API.getDJ().username +" for playing a dope track!");
+                           }
                         }
-                    }
                         break;
                         
                 case "songlink":
