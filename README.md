@@ -40,7 +40,7 @@ votes | woot | meh | skip | say | version | userstats | mystats | source | statu
 --
 ###- Filter Chat
 - There is only two chat filters (For now).
-    - `Begger filter` Begger filter can be Enable/Disable if `Command: .tbf` 
+- `Begger filter` Begger filter can be Enable/Disable by `Command: .tbf` 
 
 --
 ###- Gives rewards (Fun Command)
