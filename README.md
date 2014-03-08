@@ -53,7 +53,7 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 - Remove video and audio
 
 --
-### - Room Stats
+###- Room Stats
 - Bot can monitor and save room's woot and other accountable statics within the room.
   - Room stats and users stats
 
