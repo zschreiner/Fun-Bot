@@ -20,7 +20,8 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 ###- Bot Commands
 - Bot commands are mainly to instruct the bot
   - Admins of the bot can also use the moderators commands
-      - Helpful for moderating the room
+      - Helpful for moderating the room.
+  - While using `.commands` you can also instruct bot to show it's commands to other users. By simply Mentioning the user. `example 1`
   
 `commands`
 
@@ -28,6 +29,11 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 
 8ball | fortune | songlink | download | help | whywoot | whymeh | props | 
 votes | woot | meh | skip | say | version | userstats | mystats | source | status
+```
+`example 1`
+```
+#Tools: .commands @Neon
+#plugbot: @Neon My commands are ..[commands]..
 ```
   - More commands will be available soon!
 
