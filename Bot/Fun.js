@@ -478,7 +478,7 @@ function chatMe(msg)
                   
                 case "say":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1 || typeof command[1] === "undefined"){
-                         API.sendChat(command[1]);
+                           API.sendChat(command[1]);
                         }else{
                          API.sendChat("This command requires Bouncer only!");
                         }
@@ -490,8 +490,9 @@ function chatMe(msg)
                         }else if(command[1].toLowerCase().indexOf("plug.dj") === -1 && command[1].toLowerCase().indexOf("bug.dj") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
                             API.sendChat("http://"+command[1]);
                         }else{
-                        var IdiotMsg = ["Dude wtf is wrong with you?... Search that up yourself.","You sound stupid yo!","What do i look like a idiot bot?","What are you an idiot?"];
-                            API.sendChat("@"+ data.from +" "+ IdiotMsg[Math.floor(Math.random() * IdiotMsg.length)]);
+                         var IdiotMsg = ["Dude wtf is wrong with you? @idiot, Search that up yourself!","Sorry i cannot search that up! @idiot","@idiot You think i'd be that stupid enough to search that up?","What are you an idiot? @idiot"];
+                         r = Math.floor(Math.random() * IdiotMsg.length);
+                            API.sendChat(IdiotMsg[r].replace("idiot", data.from));
                         }
                         break;
                         
