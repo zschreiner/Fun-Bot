@@ -16,46 +16,49 @@ If a problem is to be detected please report it. I'll work on it ASAP! Thanks :)
 --
 - Filter bad words
 
----
+--
 - Gives hugs    (Fun Command)
 
----
+--
 - Gives weeds   (Fun Command)
 
----
+--
 - Gives rewards (Fun Command)
 
----
+--
 - Gives current songlink
 
----
+--
 - Limits songs length
 
----
+--
 - Ban songs (If Overplayed)
 
----
+--
 - Helps put up link
 
----
+--
 - Announces who Grab song
 
----
+--
 - Greets the Joiners
 
----
+--
 - Gives out current song's link
 
----
+--
 - Announce last song's stats
 
----
+--
 - Remove video and audio
 
----
+--
 - keeps track on room stats
 
+```
+#Plugbot: Neon Last played: song [stats: 1 Woot | 0 Grab | 0 Meh]
 
+```
 
 ---
 ### Installs
