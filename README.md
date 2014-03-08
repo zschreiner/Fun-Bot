@@ -40,7 +40,15 @@ votes | woot | meh | skip | say | version | userstats | mystats | source | statu
 --
 ###- Filter Chat
 - There is only two chat filters (For now).
-- `Begger filter` can be Enable/Disable by `Command: .tbf` 
+- `Begger Filter` can be Enable/Disable by using command `.tbf` This will allow bot to moderate Fan begging in chat [delete fan begging] `example 1`
+      - Bot can only do this process if bot has a staff rank.
+
+`example 1`
+```
+[message deleted]  < #Neon: Fan me
+#Plugbot: Are you serious @Neon?
+```
+- `Command Filter` Allows bot to delete commands if a user sends out a command to chat.
 
 --
 ###- Gives rewards (Fun Command)
