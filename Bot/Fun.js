@@ -293,6 +293,9 @@ API.on(API.DJ_ADVANCE, listener);
 API.on(API.DJ_ADVANCE, woot);
 API.on(API.USER_JOIN, UserJoin);
 API.on(API.DJ_ADVANCE, DJ_ADVANCE);
+$('#playback').hide();
+$('#audience').hide();
+API.setVolume(0);
 
 function woot(){
 $('#woot').click();
