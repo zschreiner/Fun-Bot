@@ -460,12 +460,12 @@ function chatMe(msg)
                         break;
                         
                 case "skip":
-                       if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(data.fromID).permission > 1){
                             Funbot.skip();
-                        }else if(command[1].indexOf("@") > -1){
-                            var SkipMsg = ["Sorry @user, This song has violated room's rule.","Now skipping @user song...","Now skipping current song..."];
-                            r = Math.floor(Math.random() * SkipMsg.length);
-                            API.sendChat(SkipMsg[r].replace("user", command[1]));
+                        }else if(typeof command[1] === "undefined"){
+                            API.sendChat('@'+API.getDJ().username+' '+command[1]);
+                            Funbot.skip();
+                            }
                         }else{
                             API.sendChat("This command requires Bouncer only!");
                         }
@@ -529,7 +529,7 @@ function chatMe(msg)
                         }
                         break;
  
-                    case "download":
+                case "download":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Download your song free here: http://www.vebsi.com/");
                         }else if(command[1].indexOf("@") > -1){
