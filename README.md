@@ -11,7 +11,7 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 
 ##### Fun bot version 1.0.49
 
-You customize this bot script once you fork it.
+You can customize this bot script once you fork it.
 How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#installing-bot)
 
 ---
