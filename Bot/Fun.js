@@ -79,7 +79,6 @@ Funbot.admins = ["50aeaeb6c3b97a2cb4c25bd2"];
 var announcements = 
 [""];
 
-
 // Keywords of blocked songs
 var blockedSongs = [
     "Rick Roll",
