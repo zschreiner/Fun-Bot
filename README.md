@@ -70,7 +70,7 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 ```
 ```
 #Neon: .roomstats
-#plugbot: Room Statistics - Woot: 0, Meh: 0, Votes: 0, Curates: 0.
+#plugbot: Room Statistics - Woot: 0 | Meh: 0 | Votes: 0 | Curates: 0 | Songs: 290 | Skips: 24 | Joins: 0 | Registered Users: 4.
 ```
 
 
