@@ -20,6 +20,7 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 ###- Bot Commands
 - Bot commands are mainly to instruct the bot
   - Admins of the bot can also use the moderators commands
+      - Helpful for moderating the room
   
 `commands`
 
