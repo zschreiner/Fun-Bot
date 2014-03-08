@@ -58,7 +58,7 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 #Plugbot: Are you serious @Neon?
 ```
 - `Command Filter` Allows bot to delete commands if a user sends out a command to chat.
-  - To Enable/Disable Command Filter type `.tcf`
+  - To Enable/Disable `Command Filter` type `.tcf`
 
 --
 ###- Gives rewards (Fun Command)
