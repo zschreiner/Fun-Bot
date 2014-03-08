@@ -39,7 +39,7 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 - There some commands that Mention is included!
 - Here are the commands below that are required for mentions
 
-`example 1`
+`example 2`
 ```
 #JordanTheGuy: .reward @USER
 #Plugbot: @USER, JordanTheGuy has rewarded you with a blueberry muffin. Enjoy!
