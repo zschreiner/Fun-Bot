@@ -51,15 +51,15 @@ If there happen to be a bug or problem with the bot you can report issue [HERE](
 --
 ###- Remove video and audio
 - When the script is being function bot can automatically remove video screen/audio in order for your pc to run faster!
-    - This can allow your computer to run extra faster due to low cpu that is already being used.
+        - This can allow your computer to run extra faster due to low cpu that is already being used.
   - An example screenshot [HERE](http://i1328.photobucket.com/albums/w536/Tawi_Bien/funbot_zpse09a0525.png)
 
 --
 ###- Room Stats
 - Bot can monitor and save room's woot and other accountable statics within the room/user. Sends out last song's status.
   - Room stats and users stats
-  - Your status can also be found within the bot `ex1`
-  - bot can also keep Users status. An example has been setup below `ex2`
+  - Your status can also be found within the bot `example1`
+  - bot can also keep Users status. An example has been setup below `example2`
 
 ```
 #Plugbot: Neon Last played: song [stats: 0 Woot | 0 Grab | 0 Meh]
