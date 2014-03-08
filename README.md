@@ -25,10 +25,9 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 `commands`
 
 ```
-commands:
- reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 
- 8ball | fortune | songlink | download | help | whywoot | whymeh | props | 
- votes | woot | meh | skip | say | version | userstats | mystats | source | status
+reward | reload | die | addsong | flipcoin | catfact | dogfact | hug | 
+8ball | fortune | songlink | download | help | whywoot | whymeh | props | 
+votes | woot | meh | skip | say | version | userstats | mystats | source | status
 ```
   - More commands will be available soon!
 
