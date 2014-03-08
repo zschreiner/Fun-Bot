@@ -468,7 +468,11 @@ function chatMe(msg)
                 case "skip":
                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             botMethods.skip();
-                            }else{
+                        }else if(command[1].indexOf("@") > -1){
+                            var SkipMsg = ["Sorry @user, This song has violated room's rule.","Now skipping @user song...","Now skipping current song..."];
+                            r = Math.floor(Math.random() * SkipMsg.length);
+                            API.sendChat(SkipMsg[r].replace("user", command[1]));
+                        }else{
                             API.sendChat("This command requires Bouncer only!");
                         }
                         break;
