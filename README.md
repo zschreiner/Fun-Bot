@@ -89,7 +89,7 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 
 ```
 [ Plugbot has skipped the current DJ ]
-#Plugbot: Sorry +DJ+ skipping because video exceeded the song limit!
+#Plugbot: Sorry +DJ+ skipping because video exceeded the song time limit!
 ```
 - Enable/Disable skipping songs... Coming soon!
 
