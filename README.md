@@ -89,13 +89,13 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 
 ```
 [ Plugbot has skipped the current DJ ]
-#Plugbot: Sorry +DJ+ skipping song because it exceeded the song limit!
+#Plugbot: Sorry +DJ+ skipping because video exceeded the song limit!
 ```
 - Enable/Disable skipping songs... Coming soon!
 
 --
 ###- Block Songs/Artist
-
+- You can allow bot to automatically skip songs and artist if [keywords](https://github.com/DJ-Neon05/Fun-Bot/blob/master/Bot/Fun.js#L83) are on block list.
 
 --
 ###- Helps put up link
@@ -114,8 +114,22 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 ```
 
 --
-###- Greets the Joiners
+###-Interval announcements
 
+- If you have a facebook group link you would like to share, or any message you would like to regularly announce, the bot can be configured to say a certain message every X number of songs.
+    - You can add your own announcement keyword [HERE](https://github.com/DJ-Neon05/Fun-Bot/blob/master/Bot/Fun.js#L79) 
+
+--
+###- Greets the Joiners
+- If a user joins the lobby. Bot can randomly send out greeting message to that user.
+- Random keywords for greetings
+`example`
+
+```
+#plugbot: Welcome @USER 
+#Plugbot: Hey there @USER
+#Plugbot: Glad you came by @USER
+```
 
 --
 ###- Current Song/Video Link
