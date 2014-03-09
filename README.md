@@ -1,7 +1,7 @@
 Fun Bot
 =======
 
-A script which is used for [Plug.dj](http://plug.dj/communities/)
+A Bot script which is used for [Plug.dj](http://plug.dj/communities/)
 
 I don't mind you guys using this script just long as nothing is to be changed on it.
 
