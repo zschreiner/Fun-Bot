@@ -96,6 +96,14 @@ How to function it? scroll down [HERE](https://github.com/DJ-Neon05/Fun-Bot#inst
 --
 ###- Block Songs/Artist
 - You can allow bot to automatically skip songs and artist if [keywords](https://github.com/DJ-Neon05/Fun-Bot/blob/master/Bot/Fun.js#L83) are on block list.
+    - This will set bot to skip user and alert last dj, why song was skipped.
+    - Example given below
+`example`
+
+```
+#Plugbot: Sorry this Video/Artist is blocked!
+[ Plugbot has skipped the current DJ ]
+```
 
 --
 ###- Helps put up link
