@@ -711,8 +711,8 @@ function chatMe(msg)
                         }else if(command[1].toLowerCase().indexOf("xxx") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
                             API.sendChat("@"+ data.from +" http://www.urbandictionary.com/define.php?term="+command[1]);
                         }else{
-                        var IdiotMsg = ["Dude wtf is wrong with you search that up yourself.","You sound stupid yo","What do i look like a porn bot?","What are you an idiot?"];
-                            API.sendChat("@"+ data.from +" "+ IdiotMsg[Math.floor(Math.random() * IdiotMsg.length)]);
+                        var idiotMsg = ["Dude wtf is wrong with you search that up yourself.","You sound stupid yo","What do i look like a porn bot?","What are you an idiot?"];
+                            API.sendChat("@"+ data.from +" "+ idiotMsg[Math.floor(Math.random() * idiotMsg.length)]);
                         }
                         if(Funbot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
                             Funbot.misc.ready = false;
