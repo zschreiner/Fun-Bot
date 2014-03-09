@@ -85,13 +85,17 @@ var blockedSongs = [
     "GANGNAM",
     "The Fox",
     "The Fox [Official music video HD]",
-    "10 hour"
+    "10 hour",
+    "Trololo"
 ];
 
 // Keywords of blocked artist.
 var blockedArtists = [
     "Rick Astley",
-    "Miley Cyrus"
+    "Miley Cyrus",
+    "Eduard Khil",
+    "Justin Bieber",
+    "Lil wayne"
 ];
 
 // Filter Keywords
@@ -521,15 +525,15 @@ function chatMe(msg)
                         }
                         break;
  
-                case "props":
-                       if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                   case "props":
+                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat("@"+ data.from +" just gave props to @"+ API.getDJ().username +" for playing a dope track!");
                            }
                         }
                         break;
                         
-                case "songlink":
+                   case "songlink":
                         if(API.getMedia().format == 1){
                             API.sendChat("@" + data.from + " " + "http://youtu.be/" + API.getMedia().cid);
                         }else{
@@ -540,7 +544,7 @@ function chatMe(msg)
                         }
                         break;
  
-                case "download":
+                   case "download":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Download your song free here: http://www.vebsi.com/");
                         }else if(command[1].indexOf("@") > -1){
@@ -550,7 +554,7 @@ function chatMe(msg)
                         }
                         break;
  
-                case "woot":
+                   case "woot":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat("One woot coming up!");
@@ -563,7 +567,7 @@ function chatMe(msg)
                         }
                         break;
  
-                case "meh":
+                   case "meh":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
                            API.sendChat("Bummer, A meh has been requested!!");
@@ -576,7 +580,7 @@ function chatMe(msg)
                         }
                         break;
  
-                case "join":
+                   case "join":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         setTimeout(function(){
                         var joindj = ["[user] Time to spin a track! :speaker:","[user] Seems like i'm up!","[user] Now joinning the booth"];
@@ -589,7 +593,7 @@ function chatMe(msg)
                         }
                         break;
  
-                case "leave":
+                   case "leave":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         setTimeout(function(){
                         var leavedj = ["[user] Now leaving the dj booth...","[user] Kicking me off :(","[user] Made a pic for you! http://i.imgur.com/4uVDb6f.gif  ....Loser"];
@@ -602,16 +606,16 @@ function chatMe(msg)
                         }
                         break;
  
-                case "votes":
-                       if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                   case "votes":
+                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         API.sendChat("Users vote:  :+1: " + API.getRoomScore().positive + " | :-1: " + API.getRoomScore().negative + " | :purple_heart: " + API.getRoomScore().curates);
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
                         break;
                         
-                case "version":
-                       if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                   case "version":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         API.sendChat("Bot Version "+ Funbot.misc.version);
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
@@ -620,7 +624,7 @@ function chatMe(msg)
                         }
                         break;
                         
-                case "source":
+                   case "source":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.sendChat("DJ - ɴᴇᴏɴ - TFL wrote me at github which is available here: http://goo.gl/iLRyWJ");
                             Funbot.misc.ready = false;
@@ -628,7 +632,7 @@ function chatMe(msg)
                         }
                         break;
                         
-                case "reload":
+                   case "reload":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                            API.sendChat("Now reloading script...");
                         setTimeout(function(){
@@ -642,7 +646,7 @@ function chatMe(msg)
                         }
                         break;
                         
-                    case "die":
+                   case "die":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                            API.sendChat('Unhooking Events...');
                         setTimeout(function(){
@@ -659,8 +663,8 @@ function chatMe(msg)
                         }
                         break;
  
-                case "whywoot":
-                       if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                   case "whywoot":
+                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.sendChat("Plug gives you 1 point for wooting the current song if you don't like the song i suggest you remain neutral");
                         }else if(command[1].indexOf("@") > -1){
                             API.sendChat(command[1]+" Plug gives you 1 point for wooting the current song if you don't like the song i suggest you remain neutral");
@@ -673,7 +677,7 @@ function chatMe(msg)
                         }
                         break;
  
-                    case "whymeh":
+                   case "whymeh":
                        if(API.getUser(fromID).permission < 2 || API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             API.sendChat("Reserve Mehs for songs that are a) extremely overplayed b) off genre c) absolutely god awful or d) troll songs. ");
                         }else if(command[1].indexOf("@") > -1){
@@ -687,7 +691,7 @@ function chatMe(msg)
                         }
                         break;
  
-                    case "help":
+                   case "help":
                         if(typeof command[1] == "undefined"){
                             API.sendChat("Greetings! Create a playlist and populate it with songs from either YouTube or Soundcloud. Click the 'Join Waitlist' button and wait your turn to play music.");
                                 setTimeout(function(){
