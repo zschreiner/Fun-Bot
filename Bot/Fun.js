@@ -703,7 +703,22 @@ function chatMe(msg)
                             Funbot.misc.ready = false;
                             setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
                         }
-                        break;  
+                        break;
+                    
+                   case "define":
+                        if(typeof command[1] == "undefined"){
+                            API.sendChat("@" + data.from + " Define what?!");
+                        }else if(command[1].toLowerCase().indexOf("xxx") === -1 && command[1].toLowerCase().indexOf("porn") === -1 && command[1].toLowerCase().indexOf("sex") === -1){
+                            API.sendChat("@"+ data.from +" http://www.urbandictionary.com/define.php?term="+command[1]);
+                        }else{
+                        var IdiotMsg = ["Dude wtf is wrong with you search that up yourself.","You sound stupid yo","What do i look like a porn bot?","What are you an idiot?"];
+                            API.sendChat("@"+ data.from +" "+ IdiotMsg[Math.floor(Math.random() * IdiotMsg.length)]);
+                        }
+                        if(Funbot.admins.indexOf(fromID) == -1 || API.getUser(fromID).permission < 2){
+                            Funbot.misc.ready = false;
+                            setTimeout(function(){ Funbot.misc.ready = true; }, Funbot.settings.cooldown * 1000);
+                        }
+                        break;
                 
                    case "author":
                    case "authors":
