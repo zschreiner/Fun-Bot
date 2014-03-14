@@ -516,11 +516,16 @@ function chatMe(msg)
                         break;
                         
                 case "add":
-                case "addsong":
+                case "grab":
                         if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                         if(typeof command[1] === "undefined"){
+                            setTimeout(function(){
+                        var addsong = ["[user], Grabbing song!!","[user], Ohhhh yeah :purple_heart:","[user], Now adding current song..."];
+                        r = Math.floor(Math.random() * addsong.length);
+                            API.sendChat(addsong[r].replace("user", data.from));
                             $(".icon-curate").click();
                             $($(".curate").children(".menu").children().children()[0]).mousedown();
+                        }, 500);
                             }
                         }
                         break;
