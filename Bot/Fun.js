@@ -747,7 +747,7 @@ function chatMe(msg)
                         
                    case "commandfilter":
                    case "cf":
-                        if(Funbot.admins.indexOf(fromID) > -1) Funbot.settings.commandFilter ? API.sendChat("Commands filter is enabled") : API.sendChat("Commands filter is disabled");
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1) Funbot.settings.commandFilter ? API.sendChat("Commands filter is enabled") : API.sendChat("Commands filter is disabled");
                         botMethods.save();
                         break;    
                         
@@ -764,7 +764,7 @@ function chatMe(msg)
                         break;
                         
                    case "tcf":
-                        if(Funbot.admins.indexOf(fromID) > -1){
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
                             if(Funbot.settings.commandFilter){
                                 Funbot.settings.commandFilter = false;
                                 API.sendChat("Bot will no longer filter commands.");
