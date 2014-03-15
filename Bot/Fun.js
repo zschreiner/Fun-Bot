@@ -938,7 +938,7 @@ function chatMe(msg)
  
                     case "cookie":
                     case "reward":
-                        if(typeof command[1] == "undefined"){
+                        if(typeof command[1] == "@"){
                             var crowd = API.getUsers();
                             var randomUser = Math.floor(Math.random() * crowd.length);
                             var randomCookie = Math.floor(Math.random() * Funbot.misc.cookie.length);
@@ -952,7 +952,7 @@ function chatMe(msg)
                                     break;
                             }
                         }else{
-                        if(typeof command[1] == "undefined") command[1] = command[1].substring(1);
+                        if(typeof command[1] == "@") command[1] = command[1].substring(1);
                             var randomCookie = Math.floor(Math.random() * Funbot.misc.cookie.length);
                             var randomSentence = Math.floor(Math.random() * 1);
                             switch(randomSentence){
