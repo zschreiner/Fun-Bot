@@ -477,6 +477,22 @@ function chatMe(msg)
                         }
                         break;
                         
+                case "ping":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                            API.sendChat("@"+ data.from +" Pong!");
+                            }else{
+                            API.sendChat("This command requires staff members only!");
+                        }
+                        break;
+                        
+                case "marco":
+                        if(API.getUser(fromID).permission > 1 || Funbot.admins.indexOf(fromID) > -1){
+                            API.sendChat("@"+ data.from +" Polo!");
+                            }else{
+                            API.sendChat("This command requires staff members only!");
+                        }
+                        break;        
+                        
                 case "skip":
                         if(API.getUser(data.fromID).permission > 1){
                             Funbot.skip();
